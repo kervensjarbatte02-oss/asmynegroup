@@ -1,0 +1,238 @@
+﻿node.exe : > [debug] [2026-07-22T23:09:40.919Z] Found config in file 
+"C:\Users\Jokerson\asmyn-group\frontend\vercel.json"
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (> [debug] [2026...nd\vercel.json" 
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Vercel CLI 56.5.0 (Node.js 24.14.1)
+> [debug] [2026-07-22T23:09:40.936Z] Agent/TTY/nonInteractive: isAgent=true 
+agentName=github_copilot_vscode_agent stdin.isTTY=true --non-interactive=false 
+explicitFalse=false => nonInteractive=false
+> [debug] [2026-07-22T23:09:40.936Z] user supplied a possible target for 
+deployment or an extension
+> [debug] [2026-07-22T23:09:40.990Z] failed to find extension command with 
+name "vercel---prod"
+> [debug] [2026-07-22T23:09:41.155Z] Setting target to production
+> [debug] [2026-07-22T23:09:41.202Z] Spinner invoked (Retrieving projectΓÇª) 
+with a 1000ms delay
+> [debug] [2026-07-22T23:09:41.203Z] Valid access token, skipping token 
+refresh.
+> [debug] [2026-07-22T23:09:41.223Z] #1 ΓåÆ GET https://api.vercel.com/teams/te
+am_dwS8KnuC87FxCCaz6jDzODfn?teamId=team_dwS8KnuC87FxCCaz6jDzODfn
+> [debug] [2026-07-22T23:09:41.225Z] #2 ΓåÆ GET https://api.vercel.com/v9/proje
+cts/prj_BFgwGvTsoH3DGa44FCXTYECzbidQ?teamId=team_dwS8KnuC87FxCCaz6jDzODfn
+> [debug] [2026-07-22T23:09:41.911Z] #1 ΓåÉ 200 OK: 
+sfo1::6dsqz-1784761781776-7b26d5fbca78 [688ms]
+> [debug] [2026-07-22T23:09:42.430Z] #2 ΓåÉ 200 OK: 
+sfo1::6962r-1784761781780-fb0d5cfea36a [1.21s]
+> [debug] [2026-07-22T23:09:42.434Z] Error while parsing repo data: ENOENT: no 
+such file or directory, open 
+'C:\Users\Jokerson\asmyn-group\frontend\.git\config'
+> [debug] [2026-07-22T23:09:42.637Z] Spinner invoked (Deploying 
+asmyne/frontend) with a 0ms delay
+[client-debug] 2026-07-22T23:09:42.637Z Creating deployment...
+[client-debug] 2026-07-22T23:09:42.638Z Provided 'path' is a directory.
+[client-debug] 2026-07-22T23:09:42.640Z Found 26 rules in .vercelignore
+[client-debug] 2026-07-22T23:09:42.640Z Building file tree...
+[client-debug] 2026-07-22T23:09:42.665Z Found 303 files in the specified 
+directory
+[client-debug] 2026-07-22T23:09:42.937Z Yielding a 'hashes-calculated' event 
+with 264 hashes
+[client-debug] 2026-07-22T23:09:42.937Z Using provided API URL: 
+https://api.vercel.com
+[client-debug] 2026-07-22T23:09:42.937Z Using provided user agent: vercel 
+56.5.0 node-v24.14.1 win32 (x64)
+[client-debug] 2026-07-22T23:09:42.937Z Setting platform version to harcoded 
+value 2
+[client-debug] 2026-07-22T23:09:42.937Z Creating the deployment and starting 
+upload...
+[client-debug] 2026-07-22T23:09:42.938Z Determining necessary files for 
+upload...
+[client-debug] 2026-07-22T23:09:42.938Z Creating deployment
+[client-debug] 2026-07-22T23:09:42.949Z Sending deployment creation API request
+[client-debug] 2026-07-22T23:09:43.452Z Deployment response: 
+{"error":{"code":"missing_files","message":"Missing 
+files","missing":["08d50d8eda8f3de50b1ebb1659bd39fb80f229a1"]}}
+[client-debug] 2026-07-22T23:09:43.452Z Error: Deployment request status is 400
+[client-debug] 2026-07-22T23:09:43.452Z 1 files are required to upload
+[client-debug] 2026-07-22T23:09:43.453Z Yielding a 'file-count' event
+> [debug] [2026-07-22T23:09:43.453Z] Total files 264, 1 changed
+> [debug] [2026-07-22T23:09:43.454Z] Spinner invoked (Uploading 
+[--------------------] (0.0B/4.5KB)) with a 0ms delay
+[client-debug] 2026-07-22T23:09:43.454Z Building an upload list...
+[client-debug] 2026-07-22T23:09:43.456Z Starting upload
+[client-debug] 2026-07-22T23:09:43.457Z POST 
+https://api.vercel.com/v2/files?teamId=team_dwS8KnuC87FxCCaz6jDzODfn
+> [debug] [2026-07-22T23:09:43.462Z] Spinner invoked (Uploading 
+[====================] (4.5KB/4.5KB)) with a 0ms delay
+[client-debug] 2026-07-22T23:09:43.894Z DONE in 437ms: POST 
+https://api.vercel.com/v2/files?teamId=team_dwS8KnuC87FxCCaz6jDzODfn
+[client-debug] 2026-07-22T23:09:43.894Z File 
+08d50d8eda8f3de50b1ebb1659bd39fb80f229a1 
+(C:\Users\Jokerson\asmyn-group\frontend\deploy-debug.txt) uploaded
+[client-debug] 2026-07-22T23:09:43.894Z Yielding a 'file-uploaded' event
+> [debug] [2026-07-22T23:09:43.895Z] Uploaded: 
+C:\Users\Jokerson\asmyn-group\frontend\deploy-debug.txt (4.47KB)
+[client-debug] 2026-07-22T23:09:43.895Z All files uploaded
+[client-debug] 2026-07-22T23:09:43.895Z Yielding a 'all-files-uploaded' event
+[client-debug] 2026-07-22T23:09:43.895Z Starting deployment creation
+[client-debug] 2026-07-22T23:09:43.895Z Creating deployment
+[client-debug] 2026-07-22T23:09:43.897Z Sending deployment creation API request
+[client-debug] 2026-07-22T23:09:45.118Z Deployment response: {"alias":["fronten
+d-asmyne.vercel.app","frontend-kervensjarbatte02-6649-asmyne.vercel.app"],"alia
+sAssigned":false,"automaticAliases":["frontend-asmyne.vercel.app","frontend-ker
+vensjarbatte02-6649-asmyne.vercel.app"],"bootedAt":1784761784599,"buildingAt":1
+784761784599,"buildSkipped":false,"createdAt":1784761784599,"creator":{"uid":"8
+YrQTcOp8ETKmKTQzuq8KF1m","username":"kervensjarbatte02-6649"},"id":"dpl_12fFcHD
+NkYuZipGMYZpWxXgKs2Kw","name":"frontend","meta":{"gitCommitAuthorName":"Jokerso
+n","gitCommitAuthorEmail":"jokerson@example.com","gitCommitMessage":"Initial co
+mmit","gitCommitRef":"main","gitCommitSha":"86176a18c8cf8f3c8a9202fe08110fc1cda
+f2203","gitDirty":"1","actor":"github_copilot_vscode_agent"},"originCacheRegion
+":"iad1","project":{"id":"prj_BFgwGvTsoH3DGa44FCXTYECzbidQ","name":"frontend","
+framework":null},"public":false,"readyState":"INITIALIZING","regions":["iad1"],
+"source":"cli","status":"INITIALIZING","target":"production","team":{"id":"team
+_dwS8KnuC87FxCCaz6jDzODfn","name":"Asmyne","slug":"asmyne"},"type":"LAMBDAS","u
+rl":"frontend-owq0poilo-asmyne.vercel.app","version":2,"previewCommentsEnabled"
+:true,"oidcTokenClaims":{"sub":"owner:asmyne:project:frontend:environment:produ
+ction","iss":"https://oidc.vercel.com/asmyne","scope":"owner:asmyne:project:fro
+ntend:environment:production","aud":"https://vercel.com/asmyne","owner":"asmyne
+","owner_id":"team_dwS8KnuC87FxCCaz6jDzODfn","project":"frontend","project_id":
+"prj_BFgwGvTsoH3DGa44FCXTYECzbidQ","environment":"production","plan":"hobby"},"
+lambdas":[{"id":"bld_kxlgwj2ys","createdAt":1784761784319,"entrypoint":".","rea
+dyState":"READY","readyStateAt":1784761784319,"output":[]}],"aliasAssignedAt":n
+ull,"build":{"env":[]},"builds":[{"src":"package.json","use":"@vercel/next"}],"
+createdIn":"sfo1","env":[],"functions":null,"inspectorUrl":"https://vercel.com/
+asmyne/frontend/12fFcHDNkYuZipGMYZpWxXgKs2Kw","isInConcurrentBuildsQueue":false
+,"isInSystemBuildsQueue":true,"ownerId":"team_dwS8KnuC87FxCCaz6jDzODfn","plan":
+"hobby","projectId":"prj_BFgwGvTsoH3DGa44FCXTYECzbidQ","projectSettings":{"buil
+dCommand":null,"devCommand":null,"commandForIgnoringBuildStep":null,"installCom
+mand":null,"outputDirectory":null,"speedInsights":{"id":"zHyHKCQgAiNIArEY0zAXzj
+GD4tB","hasData":false},"webAnalytics":{"id":"2EIwJffrZirpvFHHi0X8ndl3t"},"node
+Version":"24.x"},"routes":[{"src":"^/(.*)$","dest":"/$1"}],"config":{"version":
+1,"secureComputePrimaryRegion":null,"secureComputeFallbackRegion":null,"functio
+nTimeout":300,"functionType":"fluid","functionMemoryType":"standard","isUsingAc
+tiveCPU":true,"resourceConfig":{"buildMachine":{"defaultPurchaseType":"standard
+","purchaseType":"standard","machineSelectionType":"fixed"},"buildQueue":{"conf
+iguration":"SKIP_NAMESPACE_QUEUE"}}},"attribution":{"commitMeta":{"name":"Joker
+son","email":"jokerson@example.com","isVerified":false}}}
+[client-debug] 2026-07-22T23:09:45.119Z Deployment created with a warning:  
+Due to `builds` existing in your configuration file, the Build and Development 
+Settings defined in your Project Settings will not apply. Learn More: 
+https://vercel.link/unused-build-settings
+[client-debug] 2026-07-22T23:09:45.120Z Yielding a 'warning' event
+[client-debug] 2026-07-22T23:09:45.120Z Deployment created
+[client-debug] 2026-07-22T23:09:45.120Z Yielding a 'created' event
+  Inspect         
+https://vercel.com/asmyne/frontend/12fFcHDNkYuZipGMYZpWxXgKs2Kw
+  Production      https://frontend-owq0poilo-asmyne.vercel.app
+> [debug] [2026-07-22T23:09:45.123Z] Spinner invoked (BuildingΓÇª) with a 0ms 
+delay
+> [debug] [2026-07-22T23:09:45.125Z] #3 ΓåÆ GET https://api.vercel.com/v3/now/d
+eployments/dpl_12fFcHDNkYuZipGMYZpWxXgKs2Kw/events?direction=forward&follow=1&f
+ormat=lines&teamId=team_dwS8KnuC87FxCCaz6jDzODfn
+[client-debug] 2026-07-22T23:09:45.125Z Waiting for deployment to be ready...
+[client-debug] 2026-07-22T23:09:45.127Z Waiting for builds and the deployment 
+to complete...
+[client-debug] 2026-07-22T23:09:46.984Z Deployment state changed to BUILDING
+[client-debug] 2026-07-22T23:09:46.984Z Yielding a 'building' event
+> [debug] [2026-07-22T23:09:46.984Z] Spinner invoked (BuildingΓÇª) with a 0ms 
+delay
+> [debug] [2026-07-22T23:09:48.817Z] #3 ΓåÉ 200 OK: 
+sfo1::w2g48-1784761785273-78532da918c0 [3.69s]
+> [debug] [2026-07-22T23:09:48.820Z] Spinner invoked (Running build in 
+Washington, D.C., USA (East) ΓÇô iad1) with a 0ms delay
+> [debug] [2026-07-22T23:09:48.821Z] Spinner invoked (Build machine 
+configuration: 2 cores, 8 GB) with a 0ms delay
+> [debug] [2026-07-22T23:09:48.821Z] Spinner invoked (Retrieving list of 
+deployment files...) with a 0ms delay
+> [debug] [2026-07-22T23:09:48.821Z] Spinner invoked (Previous build caches 
+not available.) with a 0ms delay
+> [debug] [2026-07-22T23:09:48.821Z] Spinner invoked (Downloading 303 
+deployment files...) with a 0ms delay
+> [debug] [2026-07-22T23:09:54.443Z] Spinner invoked (Running "vercel build") 
+with a 0ms delay
+> [debug] [2026-07-22T23:09:54.444Z] Spinner invoked (Vercel CLI 56.5.0) with 
+a 0ms delay
+> [debug] [2026-07-22T23:09:54.444Z] Spinner invoked (WARNING! Due to `builds` 
+existing in your configuration file, the Build and Development Settings 
+defined in your Project Settings will not apply. Learn More: 
+https://vercel.link/unused-build-settings) with a 0ms delay
+> [debug] [2026-07-22T23:09:54.444Z] Spinner invoked (Installing 
+dependencies...) with a 0ms delay
+> [debug] [2026-07-22T23:10:07.587Z] Spinner invoked (npm error code E404) 
+with a 0ms delay
+> [debug] [2026-07-22T23:10:07.587Z] Spinner invoked (npm error 404 Not Found 
+- GET https://registry.npmjs.org/object.Groupeby/-/object.Groupeby-1.0.3.tgz - 
+Not found) with a 0ms delay
+> [debug] [2026-07-22T23:10:07.587Z] Spinner invoked (npm error 404) with a 
+0ms delay
+> [debug] [2026-07-22T23:10:07.587Z] Spinner invoked (npm error 404  The 
+requested resource 'object.Groupeby@https://registry.npmjs.org/object.Groupeby/
+-/object.Groupeby-1.0.3.tgz' could not be found or you do not have permission 
+to access it.) with a 0ms delay
+> [debug] [2026-07-22T23:10:07.587Z] Spinner invoked (npm error 404 This 
+package name is not valid, because) with a 0ms delay
+> [debug] [2026-07-22T23:10:07.587Z] Spinner invoked (npm error 404  1. name 
+can no longer contain capital letters) with a 0ms delay
+> [debug] [2026-07-22T23:10:07.588Z] Spinner invoked (npm error 404) with a 
+0ms delay
+> [debug] [2026-07-22T23:10:07.588Z] Spinner invoked (npm error 404 Note that 
+you can also install from a) with a 0ms delay
+> [debug] [2026-07-22T23:10:07.588Z] Spinner invoked (npm error 404 tarball, 
+folder, http url, or git url.) with a 0ms delay
+> [debug] [2026-07-22T23:10:07.588Z] Spinner invoked (npm error A complete log 
+of this run can be found in: 
+/vercel/.npm/_logs/2026-07-22T23_09_52_674Z-debug-0.log) with a 0ms delay
+> [debug] [2026-07-22T23:10:07.589Z] Spinner invoked (Error: Command "npm 
+install" exited with 1) with a 0ms delay
+[client-debug] 2026-07-22T23:10:07.643Z Yielding a 'error' event
+> [debug] [2026-07-22T23:10:07.660Z] Error: Error: Command "npm install" 
+exited with 1
+Error: Command "npm install" exited with 1
+    at Now.handleDeploymentError (file:///C:/Users/Jokerson/AppData/Local/npm-c
+ache/_npx/69f9afb961c37556/node_modules/vercel/dist/chunks/chunk-DOF6CJLL.js:24
+53:12)
+    at processDeployment (file:///C:/Users/Jokerson/AppData/Local/npm-cache/_np
+x/69f9afb961c37556/node_modules/vercel/dist/chunks/chunk-DOF6CJLL.js:2222:33)
+    at process.processTicksAndRejections 
+(node:internal/process/task_queues:104:5)
+    at async Now.create (file:///C:/Users/Jokerson/AppData/Local/npm-cache/_npx
+/69f9afb961c37556/node_modules/vercel/dist/chunks/chunk-DOF6CJLL.js:2346:24)
+    at async createDeploy (file:///C:/Users/Jokerson/AppData/Local/npm-cache/_n
+px/69f9afb961c37556/node_modules/vercel/dist/commands/deploy/index.js:190:12)
+    at async handleDefaultDeploy (file:///C:/Users/Jokerson/AppData/Local/npm-c
+ache/_npx/69f9afb961c37556/node_modules/vercel/dist/commands/deploy/index.js:16
+23:18)
+    at async _Span.trace (C:\Users\Jokerson\AppData\Local\npm-cache\_npx\69f9af
+b961c37556\node_modules\@vercel\build-utils\dist\index.js:36321:14)
+    at async main (file:///C:/Users/Jokerson/AppData/Local/npm-cache/_npx/69f9a
+fb961c37556/node_modules/vercel/dist/index.js:2304:18)
+> [debug] [2026-07-22T23:10:07.661Z] handling error: Error: Command "npm 
+install" exited with 1
+    at Now.handleDeploymentError (file:///C:/Users/Jokerson/AppData/Local/npm-c
+ache/_npx/69f9afb961c37556/node_modules/vercel/dist/chunks/chunk-DOF6CJLL.js:24
+53:12)
+    at processDeployment (file:///C:/Users/Jokerson/AppData/Local/npm-cache/_np
+x/69f9afb961c37556/node_modules/vercel/dist/chunks/chunk-DOF6CJLL.js:2222:33)
+    at process.processTicksAndRejections 
+(node:internal/process/task_queues:104:5)
+    at async Now.create (file:///C:/Users/Jokerson/AppData/Local/npm-cache/_npx
+/69f9afb961c37556/node_modules/vercel/dist/chunks/chunk-DOF6CJLL.js:2346:24)
+    at async createDeploy (file:///C:/Users/Jokerson/AppData/Local/npm-cache/_n
+px/69f9afb961c37556/node_modules/vercel/dist/commands/deploy/index.js:190:12)
+    at async handleDefaultDeploy (file:///C:/Users/Jokerson/AppData/Local/npm-c
+ache/_npx/69f9afb961c37556/node_modules/vercel/dist/commands/deploy/index.js:16
+23:18)
+    at async _Span.trace (C:\Users\Jokerson\AppData\Local\npm-cache\_npx\69f9af
+b961c37556\node_modules\@vercel\build-utils\dist\index.js:36321:14)
+    at async main (file:///C:/Users/Jokerson/AppData/Local/npm-cache/_npx/69f9a
+fb961c37556/node_modules/vercel/dist/index.js:2304:18)
+Error: Command "npm install" exited with 1
+> [debug] [2026-07-22T23:10:08.319Z] Vercel CLI 56.5.0 (Node.js 24.14.1)
+
+> [debug] [2026-07-22T23:10:09.245Z] Telemetry event tracked
+> [debug] [2026-07-22T23:10:09.309Z] Telemetry subprocess exited with code 0
+https://frontend-owq0poilo-asmyne.vercel.app

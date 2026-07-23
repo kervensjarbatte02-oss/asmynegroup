@@ -5,12 +5,12 @@ declare global {
 }
 
 export async function getMongoDb() {
-  const uri = process.env.MONGODB_URI || 'mongodb://asmyne:Jokerson18@ac-y4n1jhv-shard-00-00.iajah7f.mongodb.net:27017,ac-y4n1jhv-shard-00-01.iajah7f.mongodb.net:27017,ac-y4n1jhv-shard-00-02.iajah7f.mongodb.net:27017/?ssl=true&replicaSet=atlas-141ut5-shard-0&authSource=admin&appName=Cluster0';
+  const uri =
+    process.env.MONGODB_URI ||
+    "mongodb://asmyne:Jokerson18@ac-y4n1jhv-shard-00-00.iajah7f.mongodb.net:27017,ac-y4n1jhv-shard-00-01.iajah7f.mongodb.net:27017,ac-y4n1jhv-shard-00-02.iajah7f.mongodb.net:27017/asmyne?ssl=true&replicaSet=atlas-141ut5-shard-0&authSource=admin&appName=Cluster0";
 
   if (!uri) {
-    throw new Error(
-      "MONGODB_URI is missing. Ajoutez-le à votre environnement serveur ou utilisez l'URI par défaut mongodb://asmyne:Jokerson18@ac-y4n1jhv-shard-00-00.iajah7f.mongodb.net:27017,ac-y4n1jhv-shard-00-01.iajah7f.mongodb.net:27017,ac-y4n1jhv-shard-00-02.iajah7f.mongodb.net:27017/?ssl=true&replicaSet=atlas-141ut5-shard-0&authSource=admin&appName=Cluster0"
-    );
+    throw new Error("MONGODB_URI is missing.");
   }
 
   const client = global.__asmyneMongoClient ?? new MongoClient(uri);
