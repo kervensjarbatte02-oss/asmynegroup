@@ -11,8 +11,8 @@ export default function Home() {
       <header className="flex items-center px-0 py-6 w-full">
         {/* Colonne logo */}
         <div className="flex items-center gap-2 flex-shrink-0 justify-start pl-0 ml-0 m-0 p-0">
-          <Image src="/Asmyne-Groupe-logo.png" alt="Logo Asmyne Groupe " width={72} height={72} />
-          <span className="text-2xl font-bold tracking-wide whitespace-nowrap">Asmyne <span className="text-accent">Groupe</span></span>
+          <Image src="/asmyne-group-logo.png" alt="Logo Asmyne Group " width={72} height={72} />
+          <span className="text-2xl font-bold tracking-wide whitespace-nowrap">Asmyne <span className="text-accent">Group</span></span>
         </div>
         {/* Colonne menu */}
         <nav className="hidden md:flex flex-1 justify-center gap-8 text-lg font-medium">
@@ -50,7 +50,7 @@ export default function Home() {
           </div>
         </div>
         <div className="flex-1 flex justify-end items-start p-0 m-0">
-          <Image src="/Asmyne-Groupe-logo.png" alt="Logo Asmyne Groupe " width={2000} height={2000} className="-mt-40 m-0 p-0" />
+          <Image src="/asmyne-group-logo.png" alt="Logo Asmyne Group " width={2000} height={2000} className="-mt-40 m-0 p-0" />
         </div>
       </section>
 
@@ -87,7 +87,7 @@ export default function Home() {
       <section className="w-full flex flex-col md:flex-row items-center justify-center gap-10 px-4 md:px-16 py-12 bg-[#14213d] rounded-2xl shadow-lg my-8">
         {/* Image à gauche */}
         <div className="flex-1 flex justify-center">
-          <img src="/Asmyne-pierre.jpg" alt="Asmyne Pierre" className="rounded-2xl object-cover w-full max-w-xs md:max-w-sm shadow-md" />
+          <img src="/asmyne-pierre.jpg" alt="Asmyne Pierre" className="rounded-2xl object-cover w-full max-w-xs md:max-w-sm shadow-md" />
         </div>
         {/* Texte à droite */}
         <div className="flex-1 max-w-xl">
@@ -121,9 +121,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Por qué elegir Asmyne Groupe Section */}
+      {/* Por qué elegir Asmyne Group Section */}
       <section className="w-full flex flex-col items-center justify-center px-4 md:px-16 py-16 bg-[#14213d] mt-8">
-        <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-4">Por qué elegir Asmyne Groupe</h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-4">Por qué elegir Asmyne Group</h2>
         <p className="text-white/80 text-lg text-center mb-12 max-w-2xl">Ayuda y orientación en todo tu camino para tomar las mejores decisiones.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
           {/* Card 1 */}
@@ -270,7 +270,7 @@ export default function Home() {
         <div className="relative z-10 flex-1 flex flex-col gap-2 max-w-xl">
           <details open className="bg-[#2563eb] text-white rounded-lg p-5">
             <summary className="list-none flex justify-between items-center font-semibold text-lg cursor-pointer">
-              <span>¿Cómo puedo iniciar mi proceso con Asmyne Groupe?</span>
+              <span>¿Cómo puedo iniciar mi proceso con Asmyne Group?</span>
               <span className="text-2xl">+</span>
             </summary>
             <p className="mt-3 text-base font-normal text-white/90">

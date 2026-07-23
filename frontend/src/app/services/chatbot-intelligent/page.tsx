@@ -58,7 +58,7 @@ export default function ChatbotPage() {
       <aside className="w-20 bg-black border-r border-[#23272f] flex flex-col h-screen items-center justify-between py-4">
         <div className="flex flex-col gap-4 items-center w-full">
           <div className="mb-4 w-full flex justify-center">
-            <span className="text-xs font-bold tracking-wide text-[#ececf1] uppercase">Asmyne Groupe</span>
+            <span className="text-xs font-bold tracking-wide text-[#ececf1] uppercase">Asmyne Group</span>
           </div>
           {/* Plus sidebar : supprimé, déplacé au centre */}
           <button className="w-10 h-10 flex items-center justify-center rounded hover:bg-[#23272f] text-white mx-auto" title="Conversations" onClick={() => alert('Conversations')}>

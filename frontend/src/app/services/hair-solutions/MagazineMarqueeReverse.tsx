@@ -2,14 +2,14 @@
 import React from "react";
 
 const magazines = [
-  "GLAMOUR",
-  "BAZAAR",
-  "VOGUE",
-  "COSMOPOLITAN",
-  "GLAMOUR",
-  "BAZAAR",
-  "VOGUE",
-  "COSMOPOLITAN"
+  "SHEBAS",
+  "SHEBAS",
+  "SHEBAS",
+  "SHEBAS",
+  "SHEBAS",
+  "SHEBAS",
+  "SHEBAS",
+  "SHEBAS"
 ];
 
 export default function MagazineMarqueeReverse() {

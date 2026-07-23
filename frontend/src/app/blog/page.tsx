@@ -17,7 +17,7 @@ export default function Blog() {
       <section className="relative flex flex-col items-center justify-center w-full min-h-[80vh] pt-24 pb-16 overflow-hidden">
         {/* Fond image ou vidéo */}
         <div className="absolute inset-0 w-full h-full -z-10">
-          <img src="/gallery1.jpg" alt="Hero background" className="w-full h-full object-cover object-center brightness-[.55]" />
+          <img src="/blog-header.jpg" alt="Hero background" className="w-full h-full object-cover object-center brightness-[.55]" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0a174e]/60 via-[#0a174e]/40 to-[#0a174e]/90" />
         </div>
         {/* Texte principal */}

@@ -370,7 +370,7 @@ function SectionContent({ section }: { section: string }) {
                   <span className="text-blue-200">@Ninaaa518 · May 4</span>
                 </div>
                 <div className="text-white mt-1 mb-2">Happy Monday</div>
-                <video src="/videos/post1.mp4" controls className="rounded-2xl w-full max-w-md object-cover mb-2 border border-blue-700 bg-black" poster="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" />
+                <video src="/videos/video1.mp4" controls className="rounded-2xl w-full max-w-md object-cover mb-2 border border-blue-700 bg-black" poster="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" />
                 <div className="flex gap-8 text-blue-200 text-sm mt-2">
                   <span>48</span>
                   <span>183</span>
@@ -556,7 +556,7 @@ function SectionContent({ section }: { section: string }) {
         <div className="w-full min-h-screen bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 flex flex-col items-center">
           {/* Bannière */}
           <div className="w-full max-w-5xl h-64 bg-blue-900 relative flex items-end justify-end rounded-b-2xl overflow-hidden">
-            <video src="/videos/cover.mp4" controls className="absolute inset-0 w-full h-full object-cover opacity-70 bg-black" poster="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" />
+            <video src="/videos/video2.mp4" controls className="absolute inset-0 w-full h-full object-cover opacity-70 bg-black" poster="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" />
             <button className="absolute bottom-4 right-4 bg-white text-black px-4 py-2 rounded-lg flex items-center gap-2 shadow font-semibold"><svg width='18' height='18' fill='none' stroke='currentColor' strokeWidth='2' viewBox='0 0 24 24'><path d='M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2'/><polyline points='7 9 12 4 17 9'/><line x1='12' y1='4' x2='12' y2='16'/></svg>Changer la photo de couverture</button>
           </div>
           {/* Avatar et infos */}
@@ -566,7 +566,7 @@ function SectionContent({ section }: { section: string }) {
               <span className="absolute bottom-2 right-2 bg-black/70 rounded-full p-2"><svg width='20' height='20' fill='none' stroke='white' strokeWidth='2' viewBox='0 0 24 24'><path d='M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2'/><polyline points='7 9 12 4 17 9'/><line x1='12' y1='4' x2='12' y2='16'/></svg></span>
             </div>
             <div className="flex-1 flex flex-col gap-2">
-              <h1 className="text-3xl font-bold text-white">Jorgensen Kervens Jarbatt</h1>
+              <h1 className="text-3xl font-bold text-white">Jorgensen Kervens Jarbatte</h1>
               <div className="text-blue-200 font-semibold">4 K followers · 693 suivi(e)s</div>
               <div className="text-white/80 text-base">don t hesitate</div>
               <div className="flex gap-4 mt-2">

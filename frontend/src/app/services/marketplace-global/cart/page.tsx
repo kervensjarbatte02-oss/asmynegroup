@@ -7,6 +7,7 @@ import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { CardElement, Elements, useElements, useStripe } from "@stripe/react-stripe-js";
+import type { Stripe } from "@stripe/stripe-js";
 
 type CartItem = {
   id: string;
@@ -33,16 +34,16 @@ const loadStripe = async () => {
   if (typeof window === "undefined") return null;
   const win = window as StripeLoaderWindow;
   if (typeof win.Stripe === "function") {
-    return win.Stripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
+    return win.Stripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY) as Stripe | null;
   }
 
-  return new Promise<unknown>((resolve, reject) => {
+  return new Promise<Stripe | null>((resolve, reject) => {
     const script = document.createElement("script");
     script.src = "https://js.stripe.com/v3/";
     script.onload = () => {
       const loadedWindow = window as StripeLoaderWindow;
       if (typeof loadedWindow.Stripe === "function") {
-        resolve(loadedWindow.Stripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY));
+        resolve(loadedWindow.Stripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY) as Stripe | null);
       } else {
         reject(new Error("Stripe.js n'a pas pu être chargé."));
       }
@@ -171,7 +172,7 @@ function MarketplacePaymentForm({ items, total, buyerEmail, onSuccess, setError 
 }
 
 function MarketplaceStripeCheckout({ items, total, buyerEmail, onSuccess, setError }: PaymentFormProps) {
-  const [stripePromise, setStripePromise] = useState<Promise<unknown> | null>(null);
+  const [stripePromise, setStripePromise] = useState<Promise<Stripe | null> | null>(null);
 
   useEffect(() => {
     const stripeLoader = loadStripe();

@@ -15,11 +15,11 @@ export default function HairSolutionsRegister() {
     setError("");
     setSuccess("");
     if (!email || !password || !confirm) {
-      setError("Veuillez remplir tous les champs.");
+      setError("Por favor completa todos los campos.");
       return;
     }
     if (password !== confirm) {
-      setError("Les mots de passe ne correspondent pas.");
+      setError("Las contraseñas no coinciden.");
       return;
     }
     try {
@@ -30,37 +30,37 @@ export default function HairSolutionsRegister() {
       });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
-        setError(data.error || "Erreur lors de l'inscription.");
+        setError(data.error || "Error en el registro.");
         return;
       }
-      setSuccess("Compte créé avec succès ! Vous pouvez vous connecter.");
+      setSuccess("¡Cuenta creada con éxito! Puedes iniciar sesión.");
       setTimeout(() => router.push("/services/hair-solutions/connexion"), 1200);
     } catch {
-      setError("Erreur réseau. Réessayez.");
+      setError("Error de red. Intenta de nuevo.");
     }
   }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-yellow-50" style={{background: 'linear-gradient(120deg, #f7e1b5 0%, #fffbe6 100%)'}}>
       <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md flex flex-col gap-4 border border-yellow-200">
-        <h1 className="text-2xl font-bold text-yellow-800 mb-2 text-center">Créer un compte SHEBAS</h1>
+        <h1 className="text-2xl font-bold text-yellow-800 mb-2 text-center">Crear cuenta SHEBAS</h1>
         <input
           type="email"
-          placeholder="Email"
+          placeholder="Correo electrónico"
           value={email}
           onChange={e => setEmail(e.target.value)}
           className="border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-600 text-gray-900 placeholder-gray-400"
         />
         <input
           type="password"
-          placeholder="Mot de passe"
+          placeholder="Contraseña"
           value={password}
           onChange={e => setPassword(e.target.value)}
           className="border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-600 text-gray-900 placeholder-gray-400"
         />
         <input
           type="password"
-          placeholder="Confirmer le mot de passe"
+          placeholder="Confirmar contraseña"
           value={confirm}
           onChange={e => setConfirm(e.target.value)}
           className="border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-600 text-gray-900 placeholder-gray-400"
@@ -71,7 +71,7 @@ export default function HairSolutionsRegister() {
           type="submit"
           className="bg-yellow-700 text-white px-6 py-2 rounded font-semibold hover:bg-yellow-800 mt-2"
         >
-          Créer mon compte
+          Crear cuenta
         </button>
       </form>
     </div>

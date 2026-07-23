@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
+import { ObjectId } from "mongodb";
 import { getMongoDb } from "@/lib/mongodb";
 import { signAuthToken } from "@/lib/jwt";
 import { checkRateLimit, getClientIp } from "@/lib/rateLimit";
@@ -50,7 +51,7 @@ export async function POST(request: Request) {
     const users = db.collection("users");
 
     const otpRecord = await otps.findOne<{
-      _id: unknown;
+      _id: ObjectId;
       email: string;
       nom: string;
       prenom: string;

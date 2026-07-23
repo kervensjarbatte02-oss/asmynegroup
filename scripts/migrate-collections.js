@@ -1,8 +1,8 @@
-// Script Node.js pour copier toutes les collections de 'asmyn-groupe' vers 'asmyne'
+// Script Node.js pour copier toutes les collections de 'asmyn-group' vers 'asmyne'
 const { MongoClient } = require('mongodb');
 
 const uri = 'mongodb://asmyne:Jokerson18@ac-y4n1jhv-shard-00-00.iajah7f.mongodb.net:27017,ac-y4n1jhv-shard-00-01.iajah7f.mongodb.net:27017,ac-y4n1jhv-shard-00-02.iajah7f.mongodb.net:27017/?ssl=true&replicaSet=atlas-141ut5-shard-0&authSource=admin&appName=Cluster0';
-const sourceDbName = 'asmyn-groupe';
+const sourceDbName = 'asmyn-group';
 const targetDbName = 'asmyne';
 const collectionName = 'collections';
 

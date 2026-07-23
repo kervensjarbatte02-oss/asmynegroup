@@ -1,12 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { ObjectId } from "mongodb";
-import Stripe from "stripe";
 import { verifyAuthToken } from "@/lib/jwt";
 import { getMongoDb } from "@/lib/mongodb";
 import { checkRateLimit, getClientIp } from "@/lib/rateLimit";
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, { apiVersion: "2026-05-27.dahlia" });
+import { getStripe } from "@/lib/stripe";
 
 type UserDoc = {
   _id: ObjectId;
@@ -32,6 +30,7 @@ async function getAuthenticatedUserId() {
 }
 
 export async function POST(request: NextRequest) {
+  const stripe = getStripe();
   const clientIp = getClientIp(request.headers);
   const rate = checkRateLimit(`stripe-connect-create:${clientIp}`, 5, 60_000);
   if (!rate.allowed) {

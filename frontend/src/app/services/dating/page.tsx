@@ -15,7 +15,7 @@ export default function DatingLanding() {
         <header className="relative z-10 w-full flex justify-between items-center px-8 pt-8">
           <div className="flex items-center gap-2">
             <span className="bg-pink-500 rounded-full w-8 h-8 flex items-center justify-center text-white text-2xl font-bold">♥</span>
-            <span className="text-white text-2xl font-extrabold tracking-wide">Asmyne Groupe</span>
+            <span className="text-white text-2xl font-extrabold tracking-wide">Asmyne Group</span>
           </div>
           <button className="text-white text-3xl focus:outline-none">
             <span className="sr-only">Abrir menú</span>
@@ -25,7 +25,7 @@ export default function DatingLanding() {
 
         <main className="relative z-10 flex flex-col items-center justify-center flex-1 w-full px-4 text-center mt-24">
           <div className="flex gap-4 justify-center mb-6">
-            <a href="#" className="text-white text-2xl hover:text-pink-400"><i className="fab fa-Asmyn-Groupe-f"></i></a>
+            <a href="#" className="text-white text-2xl hover:text-pink-400"><i className="fab fa-Asmyn-Group-f"></i></a>
             <a href="#" className="text-white text-2xl hover:text-pink-400"><i className="fab fa-twitter"></i></a>
             <a href="#" className="text-white text-2xl hover:text-pink-400"><i className="fab fa-youtube"></i></a>
             <a href="#" className="text-white text-2xl hover:text-pink-400"><i className="fab fa-instagram"></i></a>
@@ -57,7 +57,7 @@ export default function DatingLanding() {
           </div>
           <div className="flex flex-col items-center justify-center z-20">
             <h2 className="text-white text-3xl md:text-4xl font-extrabold mb-2">Inicia tu historia de amor</h2>
-            <p className="text-white text-lg md:text-xl mb-8">Asmyne Groupe: encuentra el amor con nuestro sitio de citas.</p>
+            <p className="text-white text-lg md:text-xl mb-8">Asmyne Group: encuentra el amor con nuestro sitio de citas.</p>
             <Link
               href="/connexion"
               className="bg-white text-pink-500 font-bold px-10 py-3 rounded-full text-lg shadow-lg hover:bg-pink-100 transition-all"
@@ -110,7 +110,7 @@ export default function DatingLanding() {
         <p className="text-center text-xl text-black mb-10 font-semibold">Mantén la calma. Sé amable. Sé tú mismo.</p>
         <div className="flex flex-col items-center w-full max-w-xl">
           <div className="bg-white rounded-2xl shadow-md px-6 py-4 mb-8 text-black text-lg w-full text-left font-normal">
-            Hola, soy Sarah y soy la primera IA de Encuentros para Asmyne Groupe. <span className="font-bold text-black">¿Cuáles son tus preferencias?</span>
+            Hola, soy Sarah y soy la primera IA de Encuentros para Asmyne Group. <span className="font-bold text-black">¿Cuáles son tus preferencias?</span>
           </div>
           <div className="flex flex-col gap-6 w-full">
             <button className="w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 rounded-full text-lg shadow-lg transition-all">Hombres</button>

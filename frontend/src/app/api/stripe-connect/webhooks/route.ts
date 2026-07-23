@@ -1,10 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { ObjectId } from "mongodb";
-import Stripe from "stripe";
 import { getMongoDb } from "@/lib/mongodb";
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, { apiVersion: "2026-05-27.dahlia" });
-const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!;
+import { getStripe, getStripeWebhookSecret } from "@/lib/stripe";
 
 type UserDoc = {
   _id: ObjectId;
@@ -20,7 +17,9 @@ export async function POST(request: NextRequest) {
   const body = await request.text();
   const signature = request.headers.get("stripe-signature")!;
 
-  let event: Stripe.Event;
+  const stripe = getStripe();
+  const webhookSecret = getStripeWebhookSecret();
+  let event: import("stripe").Stripe.Event;
 
   try {
     event = stripe.webhooks.constructEvent(body, signature, webhookSecret);
@@ -35,7 +34,7 @@ export async function POST(request: NextRequest) {
   try {
     switch (event.type) {
       case "account.updated": {
-        const account = event.data.object as Stripe.Account;
+        const account = event.data.object as import("stripe").Stripe.Account;
 
         // Trouver l'utilisateur avec ce compte Stripe Connect
         const user = await users.findOne({ stripeConnectId: account.id });
@@ -63,19 +62,19 @@ export async function POST(request: NextRequest) {
       }
 
       case "payout.created": {
-        const payout = event.data.object as Stripe.Payout;
+        const payout = event.data.object as import("stripe").Stripe.Payout;
         console.log(`Payout created: ${payout.id}, amount: ${payout.amount}`);
         break;
       }
 
       case "payout.paid": {
-        const payout = event.data.object as Stripe.Payout;
+        const payout = event.data.object as import("stripe").Stripe.Payout;
         console.log(`Payout paid: ${payout.id}, amount: ${payout.amount}`);
         break;
       }
 
       case "payout.failed": {
-        const payout = event.data.object as Stripe.Payout;
+        const payout = event.data.object as import("stripe").Stripe.Payout;
         console.error(`Payout failed: ${payout.id}, failure code: ${payout.failure_code}`);
         break;
       }

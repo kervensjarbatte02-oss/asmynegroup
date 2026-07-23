@@ -25,10 +25,10 @@ export default function HairSolutionsNavbar() {
       </div>
       <ul className="flex gap-8 text-lg font-semibold">
         <li>
-          <Link href="/services/hair-solutions" className="hover:text-yellow-600 cursor-pointer">HOME</Link>
+          <Link href="/services/hair-solutions" className="hover:text-yellow-600 cursor-pointer">INICIO</Link>
         </li>
-        <li className="hover:text-yellow-600 cursor-pointer">PRODUCT</li>
-        <li className="hover:text-yellow-600 cursor-pointer">CONTACT</li>
+        <li className="hover:text-yellow-600 cursor-pointer">PRODUCTO</li>
+        <li className="hover:text-yellow-600 cursor-pointer">CONTACTO</li>
       </ul>
       <div className="flex items-center gap-4 relative">
         {!isLogged ? (
@@ -58,7 +58,7 @@ export default function HairSolutionsNavbar() {
             </Link>
             <button
               className="ml-2 flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 hover:bg-red-200 border border-gray-300"
-              title="Déconnexion"
+              title="Cerrar sesión"
               onClick={() => {
                 localStorage.removeItem("shebas_token");
                 document.cookie = "asmyne_auth=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";

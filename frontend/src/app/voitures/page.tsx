@@ -9,7 +9,7 @@ export default function VoituresPage() {
       {/* Navbar */}
       <nav className="w-full bg-black text-white py-4 px-8 flex items-center justify-between shadow z-30 relative">
         <div className="flex items-center gap-3">
-          <img src="/asmyne-groupe-logo.png" alt="Asmyne Groupe" width={48} style={{height: 'auto'}} className="object-contain" />
+          <img src="/asmyne-group-logo.png" alt="Asmyne Group" width={48} style={{height: 'auto'}} className="object-contain" />
           <span className="text-2xl font-extrabold tracking-tight">Asmyne Voyages</span>
         </div>
         <div className="hidden md:flex gap-8 text-lg font-semibold">

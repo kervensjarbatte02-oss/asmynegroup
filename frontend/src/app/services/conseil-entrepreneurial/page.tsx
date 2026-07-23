@@ -32,7 +32,7 @@ export default function ConseilEntrepreneurialPage() {
       >
         {/* Logo et titre à gauche */}
         <div className="flex items-center gap-2 min-w-[170px]">
-          <img src="/asmyne-groupe-logo.png" alt="Asmyne Group" width={40} height={40} className="object-contain rounded-full border-2 border-[#f2c46f] bg-black" />
+          <img src="/asmyne-group-logo.png" alt="Asmyne Group" width={40} height={40} className="object-contain rounded-full border-2 border-[#f2c46f] bg-black" />
           <span className="text-lg font-bold tracking-tight text-[#f2c46f] ml-2">Asmyne Group</span>
         </div>
         {/* Contact à droite */}
@@ -240,7 +240,7 @@ Manejo de documentos</p>
           {/* Bloc logo & description */}
           <div className="flex-1 min-w-[220px] flex flex-col items-center md:items-start mb-6 md:mb-0">
             <div className="flex items-center gap-2 mb-3">
-              <img src="/asmyne-groupe-logo.png" alt="Asmyne Group" width={40} height={40} className="object-contain rounded-full border-2 border-[#f2c46f] bg-black" />
+              <img src="/asmyne-group-logo.png" alt="Asmyne Group" width={40} height={40} className="object-contain rounded-full border-2 border-[#f2c46f] bg-black" />
               <span className="text-2xl font-extrabold tracking-wide">Asmyne Group</span>
             </div>
             <div className="text-[#f2c46f]/90 mb-2 font-semibold">Consultoría Empresarial</div>
@@ -283,9 +283,9 @@ Manejo de documentos</p>
           <div className="flex-1 min-w-[160px]">
             <div className="font-bold mb-3 text-lg">Síguenos</div>
             <div className="flex gap-4">
-              <a href="#" className="hover:text-white" aria-label="Facebook"><svg width="22" height="22" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/><path d="M15 8h-2a1 1 0 0 0-1 1v2h3l-.5 2H12v6h-2v-6H8v-2h2V9a3 3 0 0 1 3-3h2v2z" fill="currentColor"/></svg></a>
-              <a href="#" className="hover:text-white" aria-label="Instagram"><svg width="22" height="22" fill="none" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="5" stroke="currentColor" strokeWidth="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg></a>
-              <a href="#" className="hover:text-white" aria-label="LinkedIn"><svg width="22" height="22" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/><rect x="8" y="10" width="2" height="6" fill="currentColor"/><rect x="14" y="10" width="2" height="6" fill="currentColor"/><circle cx="9" cy="8" r="1" fill="currentColor"/><circle cx="15" cy="8" r="1" fill="currentColor"/></svg></a>
+              <a href="https://www.facebook.com/share/1KGpFstMcy/" className="hover:text-white" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg width="22" height="22" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/><path d="M15 8h-2a1 1 0 0 0-1 1v2h3l-.5 2H12v6h-2v-6H8v-2h2V9a3 3 0 0 1 3-3h2v2z" fill="currentColor"/></svg></a>
+              <a href="https://www.instagram.com/asmynegroup?igsh=M3FpNzA2dTZzdXl4" className="hover:text-white" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><svg width="22" height="22" fill="none" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="5" stroke="currentColor" strokeWidth="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg></a>
+              <a href="https://www.youtube.com/@asmynegroup" className="hover:text-white" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M10 8l6 4-6 4V8z" fill="currentColor"/><rect x="2" y="4" width="20" height="16" rx="4" stroke="currentColor" strokeWidth="2" fill="none"/></svg></a>
             </div>
           </div>
         </div>

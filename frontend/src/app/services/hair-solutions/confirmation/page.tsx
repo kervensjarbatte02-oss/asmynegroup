@@ -21,25 +21,25 @@ export default function ConfirmationPage() {
             </svg>
           </div>
 
-          <h1 className="text-3xl font-bold text-yellow-900 mb-2">Commande confirmée!</h1>
+          <h1 className="text-3xl font-bold text-yellow-900 mb-2">¡Pedido confirmado!</h1>
           <p className="text-gray-600 mb-6">
-            Merci pour votre achat. Votre commande a été traitée avec succès.
+            Gracias por tu compra. Tu pedido se ha procesado correctamente.
           </p>
 
           <div className="bg-yellow-50 rounded-lg p-4 mb-6 border border-yellow-200">
-            <p className="text-sm text-gray-600 mb-2">Numéro de commande</p>
+            <p className="text-sm text-gray-600 mb-2">Número de pedido</p>
             <p className="text-xl font-bold text-yellow-900">#SHEBAS-{Math.random().toString(36).substr(2, 9).toUpperCase()}</p>
           </div>
 
           <div className="space-y-2 mb-8 text-left text-sm text-gray-600">
             <p className="flex items-center gap-2">
-              <span className="text-green-600">✓</span> Un email de confirmation a été envoyé
+              <span className="text-green-600">✓</span> Se ha enviado un correo de confirmación
             </p>
             <p className="flex items-center gap-2">
-              <span className="text-green-600">✓</span> Vous recevrez votre commande dans 5-7 jours
+              <span className="text-green-600">✓</span> Recibirás tu pedido en 5-7 días
             </p>
             <p className="flex items-center gap-2">
-              <span className="text-green-600">✓</span> Suivez votre commande par email
+              <span className="text-green-600">✓</span> Haz seguimiento por email
             </p>
           </div>
 
@@ -54,7 +54,7 @@ export default function ConfirmationPage() {
               href="/"
               className="block w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg text-center"
             >
-              Retour à l'accueil
+              Volver a inicio
             </Link>
           </div>
         </div>

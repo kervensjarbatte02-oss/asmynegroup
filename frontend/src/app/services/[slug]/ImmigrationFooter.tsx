@@ -55,10 +55,10 @@ export default function ImmigrationFooter() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between items-center gap-4 text-white/70 text-sm">
         <div>©2026 Asmyne Migration. Tous droits réservés.</div>
         <div className="flex gap-4 mt-2 md:mt-0">
-          <a href="#" className="hover:text-white" aria-label="Facebook">
+          <a href="https://www.facebook.com/share/1KGpFstMcy/" className="hover:text-white" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
             <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/><path d="M15 8h-2a1 1 0 0 0-1 1v2h3l-.5 2H12v6h-2v-6H8v-2h2V9a3 3 0 0 1 3-3h2v2z" fill="currentColor"/></svg>
           </a>
-          <a href="#" className="hover:text-white" aria-label="Instagram">
+          <a href="https://www.instagram.com/asmynegroup?igsh=M3FpNzA2dTZzdXl4" className="hover:text-white" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
             <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
           </a>
           <a href="#" className="hover:text-white" aria-label="LinkedIn">

@@ -1,4 +1,5 @@
 import React from "react";
+import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube, FaWhatsapp } from "react-icons/fa";
 
 export default function HomeFooter() {
   return (
@@ -8,7 +9,7 @@ export default function HomeFooter() {
         <div className="flex-1 min-w-[260px]">
           <div className="flex items-center gap-2 mb-4">
             <div className="w-8 h-8 rounded bg-[#e6e85c] flex items-center justify-center font-bold text-2xl text-[#16213a]">A</div>
-            <span className="text-3xl font-extrabold tracking-wide">Asmyne Groupe</span>
+            <span className="text-3xl font-extrabold tracking-wide">Asmyne Group</span>
           </div>
           <div className="text-white/80 mb-2">Adresse :</div>
           <div className="mb-2 font-semibold">Casa 12 Calle primera Urb Mirador Isabela Sector Villa Mella Pr3ximo a la avenida Jacobo Majluta Santo Domingo Norte Rep. Dom.</div>
@@ -53,16 +54,22 @@ export default function HomeFooter() {
       </div>
       <hr className="my-8 border-white/10" />
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between items-center gap-4 text-white/70 text-sm">
-        <div>©2026 Asmyne Groupe. Tous droits réservés.</div>
+        <div>©2026 Asmyne Group. Tous droits réservés.</div>
         <div className="flex gap-4 mt-2 md:mt-0">
-          <a href="#" className="hover:text-white" aria-label="Facebook">
-            <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/><path d="M15 8h-2a1 1 0 0 0-1 1v2h3l-.5 2H12v6h-2v-6H8v-2h2V9a3 3 0 0 1 3-3h2v2z" fill="currentColor"/></svg>
+          <a href="https://www.facebook.com/share/1KGpFstMcy/" className="hover:text-white" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <FaFacebookF size={22} />
           </a>
-          <a href="#" className="hover:text-white" aria-label="Instagram">
-            <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+          <a href="https://www.instagram.com/asmynegroup?igsh=M3FpNzA2dTZzdXl4" className="hover:text-white" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <FaInstagram size={22} />
           </a>
-          <a href="#" className="hover:text-white" aria-label="LinkedIn">
-            <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/><path d="M8 10v6M16 10v6M12 10v6M8 10a4 4 0 1 1 8 0"/></svg>
+          <a href="https://www.tiktok.com/@asmynegroup?_r=1&_t=ZS-98GMg7lSOjB" className="hover:text-white" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+            <FaTiktok size={22} />
+          </a>
+          <a href="https://www.youtube.com/@asmynegroup" className="hover:text-white" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+            <FaYoutube size={22} />
+          </a>
+          <a href="https://whatsapp.com/channel/0029Vb77mjJLtOjIa8b3Bn3x" className="hover:text-white" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+            <FaWhatsapp size={22} />
           </a>
         </div>
       </div>

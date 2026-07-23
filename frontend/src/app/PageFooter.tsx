@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube, FaWhatsapp, FaGlobe } from "react-icons/fa";
 
 type FooterTheme = {
   bg: string;
@@ -628,17 +629,23 @@ export default function PageFooter() {
       <div className={`max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between items-center gap-4 text-sm ${theme.muted}`}>
         <div>©2026 Asmyne. Todos los derechos reservados.</div>
         <div className="flex gap-4 mt-2 md:mt-0">
-          <a href="#" className={theme.socialHover} aria-label="Facebook">
-            <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" /><path d="M15 8h-2a1 1 0 0 0-1 1v2h3l-.5 2H12v6h-2v-6H8v-2h2V9a3 3 0 0 1 3-3h2v2z" fill="currentColor" /></svg>
+          <a href="https://www.facebook.com/share/1KGpFstMcy/" className={theme.socialHover} aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <FaFacebookF size={22} />
           </a>
-          <a href="#" className={theme.socialHover} aria-label="X">
-            <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" /><path d="M8 8l8 8M16 8l-8 8" stroke="currentColor" strokeWidth="2" /></svg>
+          <a href="https://www.instagram.com/asmynegroup?igsh=M3FpNzA2dTZzdXl4" className={theme.socialHover} aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <FaInstagram size={22} />
           </a>
-          <a href="#" className={theme.socialHover} aria-label="Instagram">
-            <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="5" stroke="currentColor" strokeWidth="2" /><circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2" /><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" /></svg>
+          <a href="https://www.tiktok.com/@asmynegroup?_r=1&_t=ZS-98GMg7lSOjB" className={theme.socialHover} aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+            <FaTiktok size={22} />
           </a>
-          <a href="#" className={theme.socialHover} aria-label="TikTok">
-            <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" /><path d="M15 8v5.5a2.5 2.5 0 1 1-2.5-2.5" stroke="currentColor" strokeWidth="2" /><circle cx="16.5" cy="7.5" r="1.5" fill="currentColor" /></svg>
+          <a href="https://www.youtube.com/@asmynegroup" className={theme.socialHover} aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+            <FaYoutube size={22} />
+          </a>
+          <a href="https://whatsapp.com/channel/0029Vb77mjJLtOjIa8b3Bn3x" className={theme.socialHover} aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+            <FaWhatsapp size={22} />
+          </a>
+          <a href="https://www.asmynegroup.com" className={theme.socialHover} aria-label="Website" target="_blank" rel="noopener noreferrer">
+            <FaGlobe size={22} />
           </a>
         </div>
         <button

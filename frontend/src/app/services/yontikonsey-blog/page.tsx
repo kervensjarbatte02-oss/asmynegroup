@@ -170,7 +170,7 @@ export default function YontikonseyBlog() {
             style={{ overflowX: "hidden" }}
           >
             <div className="min-w-[320px] max-w-xs flex-shrink-0 snap-center flex flex-col items-center">
-              <video src="/videos/video1.mp4" controls className="w-72 h-72 object-cover mb-6 bg-black" poster="/images/sponsored2.jpg" />
+              <video src="/videos/video1.mp4" controls className="w-72 h-72 object-cover mb-6 bg-black" poster="/images/sponsored.png" />
               <div className="w-full flex items-center mb-2">
                 <span className="text-2xl mr-2 text-black">←</span>
                 <h3 className="font-serif text-2xl font-normal text-black">Cómo empezar una nueva vida con dignidad</h3>
@@ -179,7 +179,7 @@ export default function YontikonseyBlog() {
               <a href="/services/yontikonsey-blog/blogs/detail" className="inline-block bg-[#f9f6f3] px-8 py-3 rounded tracking-widest text-base font-semibold text-black border border-transparent hover:border-black transition">Leer más</a>
             </div>
             <div className="min-w-[320px] max-w-xs flex-shrink-0 snap-center flex flex-col items-center">
-              <video src="/videos/video2.mp4" controls className="w-72 h-72 object-cover mb-6 bg-black" poster="/images/popular2.jpg" />
+              <video src="/videos/video2.mp4" controls className="w-72 h-72 object-cover mb-6 bg-black" poster="/images/service-marketplace.png" />
               <div className="w-full flex items-center mb-2">
                 <h3 className="font-serif text-2xl font-normal text-black">Pequeños negocios con gran futuro</h3>
               </div>
@@ -187,7 +187,7 @@ export default function YontikonseyBlog() {
               <a href="/services/yontikonsey-blog/blogs/detail" className="inline-block bg-[#f9f6f3] px-8 py-3 rounded tracking-widest text-base font-semibold text-black border border-transparent hover:border-black transition">Leer más</a>
             </div>
             <div className="min-w-[320px] max-w-xs flex-shrink-0 snap-center flex flex-col items-center">
-              <video src="/videos/video3.mp4" controls className="w-72 h-72 object-cover mb-6 bg-black" poster="/images/popular3.jpg" />
+              <video src="/videos/video3.mp4" controls className="w-72 h-72 object-cover mb-6 bg-black" poster="/images/service-dating.png" />
               <div className="w-full flex items-center mb-2">
                 <h3 className="font-serif text-2xl font-normal text-black">Aprender, ahorrar y avanzar</h3>
                 <span className="text-2xl ml-2 text-black">→</span>
@@ -196,7 +196,7 @@ export default function YontikonseyBlog() {
               <a href="/services/yontikonsey-blog/blogs/detail" className="inline-block bg-[#f9f6f3] px-8 py-3 rounded tracking-widest text-base font-semibold text-black border border-transparent hover:border-black transition">Leer más</a>
             </div>
             <div className="min-w-[320px] max-w-xs flex-shrink-0 snap-center flex flex-col items-center">
-              <video src="/videos/video4.mp4" controls className="w-72 h-72 object-cover mb-6 bg-black" poster="/images/popular4.jpg" />
+              <video src="/videos/video4.mp4" controls className="w-72 h-72 object-cover mb-6 bg-black" poster="/images/service-hair.png" />
               <div className="w-full flex items-center mb-2">
                 <span className="text-2xl mr-2 text-black">→</span>
                 <h3 className="font-serif text-2xl font-normal text-black">La importancia de una buena red de apoyo</h3>
@@ -274,10 +274,10 @@ export default function YontikonseyBlog() {
           </div>
           <div className="flex-1 flex flex-col items-center justify-center relative min-w-[320px]">
             <div className="absolute top-0 right-16 w-56 h-56 bg-white rounded shadow-lg overflow-hidden z-10">
-              <img src="/images/optin2.jpg" alt="Suscripción 2" className="w-full h-full object-cover" />
+              <img src="/images/freebie.png" alt="Suscripción 2" className="w-full h-full object-cover" />
             </div>
             <div className="relative top-32 left-0 w-64 h-64 bg-white rounded shadow-2xl overflow-hidden z-20">
-              <img src="/images/optin1.jpg" alt="Suscripción 1" className="w-full h-full object-cover" />
+              <img src="/images/hero-voyage.jpg" alt="Suscripción 1" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>

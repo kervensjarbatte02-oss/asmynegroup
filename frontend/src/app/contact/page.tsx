@@ -1,10 +1,10 @@
 "use client";
-import { FaUser, FaEnvelope, FaPhone, FaCommentDots, FaFacebook, FaTwitter, FaLinkedin, FaMapMarkerAlt, FaCheckCircle, FaLock } from "react-icons/fa";
+import { FaUser, FaEnvelope, FaPhone, FaCommentDots, FaFacebook, FaInstagram, FaYoutube, FaMapMarkerAlt, FaCheckCircle, FaLock } from "react-icons/fa";
 import { useState } from "react";
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
-  const [avatar, setAvatar] = useState("/public/destinations/avatar-premium.png"); // Remplacez par un vrai chemin si besoin
+  const [avatar, setAvatar] = useState("/destinations/person1.png"); // Remplacez par un vrai chemin si besoin
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -25,7 +25,7 @@ export default function Contact() {
         <div className="flex-1 bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl pt-20 pb-10 px-6 md:pt-24 md:pb-16 md:px-16 flex flex-col gap-8 border border-white/10 relative overflow-visible">
           {/* Avatar décoratif */}
           <div className="absolute -top-14 left-1/2 -translate-x-1/2 w-28 h-28 rounded-full bg-gradient-to-br from-primary to-accent border-4 border-white shadow-lg flex items-center justify-center animate-bounce-slow z-20">
-            <video src="/videos/avatar-premium.mp4" className="w-16 h-16 rounded-full object-cover border-2 border-white shadow bg-black" poster="/destinations/avatar-premium.png" autoPlay loop muted />
+            <video src="/videos/video1.mp4" className="w-16 h-16 rounded-full object-cover border-2 border-white shadow bg-black" poster="/destinations/person1.png" autoPlay loop muted />
             {!avatar && <FaUser style={{ color: 'white', fontSize: '2rem' }} />}
           </div>
           {sent && (
@@ -80,9 +80,9 @@ export default function Contact() {
 
           {/* Réseaux sociaux */}
           <div className="flex justify-center gap-6 mt-8">
-            <a href="#" className="text-white/80 hover:text-primary text-2xl transition" aria-label="Facebook"><FaFacebook style={{ color: 'white', opacity: 0.8, fontSize: '2rem' }} /></a>
-            <a href="#" className="text-white/80 hover:text-primary text-2xl transition" aria-label="Twitter"><FaTwitter style={{ color: 'white', opacity: 0.8, fontSize: '2rem' }} /></a>
-            <a href="#" className="text-white/80 hover:text-primary text-2xl transition" aria-label="LinkedIn"><FaLinkedin style={{ color: 'white', opacity: 0.8, fontSize: '2rem' }} /></a>
+            <a href="https://www.facebook.com/share/1KGpFstMcy/" className="text-white/80 hover:text-primary text-2xl transition" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><FaFacebook style={{ color: 'white', opacity: 0.8, fontSize: '2rem' }} /></a>
+            <a href="https://www.instagram.com/asmynegroup?igsh=M3FpNzA2dTZzdXl4" className="text-white/80 hover:text-primary text-2xl transition" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><FaInstagram style={{ color: 'white', opacity: 0.8, fontSize: '2rem' }} /></a>
+            <a href="https://www.youtube.com/@asmynegroup" className="text-white/80 hover:text-primary text-2xl transition" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><FaYoutube style={{ color: 'white', opacity: 0.8, fontSize: '2rem' }} /></a>
           </div>
         </div>
         {/* Carte info & carte */}

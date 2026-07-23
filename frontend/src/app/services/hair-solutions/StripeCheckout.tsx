@@ -30,6 +30,7 @@ type CartItem = {
   image?: string;
   price?: number;
   quantity?: number;
+  source?: string;
 };
 
 type StripeCheckoutProps = {
@@ -105,7 +106,7 @@ function PaymentForm({ items, total, onSuccess, setError }: StripeCheckoutProps)
         onSuccess();
       }
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Payment error');
+      setError(err instanceof Error ? err.message : 'Error de pago');
     }
 
     setLoading(false);
@@ -114,19 +115,19 @@ function PaymentForm({ items, total, onSuccess, setError }: StripeCheckoutProps)
   return (
     <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4">
       <div>
-        <label className="block text-yellow-900 font-semibold mb-2">Email</label>
+        <label className="block text-yellow-900 font-semibold mb-2">Correo electrónico</label>
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="votre@email.com"
+          placeholder="tu@correo.com"
           required
           className="w-full px-4 py-2 border border-yellow-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-600"
         />
       </div>
 
       <div>
-        <label className="block text-yellow-900 font-semibold mb-2">Carte bancaire</label>
+        <label className="block text-yellow-900 font-semibold mb-2">Tarjeta de crédito</label>
         <div className="p-4 border border-yellow-300 rounded-lg bg-white">
           <CardElement
             options={{
@@ -149,12 +150,12 @@ function PaymentForm({ items, total, onSuccess, setError }: StripeCheckoutProps)
         disabled={loading || !stripe}
         className="bg-pink-600 hover:bg-pink-700 disabled:bg-gray-400 text-white font-bold py-3 px-8 rounded-lg w-full"
       >
-        {loading ? 'Traitement...' : `Payer ${total.toFixed(2)} $`}
+        {loading ? 'Procesando...' : `Pagar ${total.toFixed(2)} $`}
       </button>
 
       {success && (
         <div className="text-green-700 font-semibold p-3 bg-green-50 rounded-lg">
-          ✓ Paiement réussi! Votre commande a été créée.
+          ✓ ¡Pago realizado! Tu pedido ha sido creado.
         </div>
       )}
     </form>
@@ -171,7 +172,7 @@ export function StripeCheckout({ items, total, onSuccess, setError }: StripeChec
   }, []);
 
   if (!stripe) {
-    return <div className="text-gray-500">Chargement du paiement...</div>;
+    return <div className="text-gray-500">Cargando el pago...</div>;
   }
 
   return (

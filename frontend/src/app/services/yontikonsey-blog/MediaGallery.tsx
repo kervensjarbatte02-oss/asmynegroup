@@ -6,7 +6,7 @@ export default function MediaGallery() {
         {/* Vidéo immersive */}
         <div className="relative group overflow-hidden rounded-2xl shadow-lg aspect-video">
           <video controls className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
-            <source src="/videos/exemple.mp4" type="video/mp4" />
+            <source src="/videos/video1.mp4" type="video/mp4" />
             Votre navigateur ne supporte pas la vidéo.
           </video>
           <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-3 flex items-end">
@@ -15,7 +15,7 @@ export default function MediaGallery() {
         </div>
         {/* Photo immersive */}
         <div className="relative group overflow-hidden rounded-2xl shadow-lg aspect-video">
-          <img src="/images/exemple.jpg" alt="Exemple" className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300" />
+          <img src="/images/blog.png" alt="Exemple" className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300" />
           <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-3 flex items-end">
             <span className="text-white font-semibold text-lg">Légende de la photo</span>
           </div>

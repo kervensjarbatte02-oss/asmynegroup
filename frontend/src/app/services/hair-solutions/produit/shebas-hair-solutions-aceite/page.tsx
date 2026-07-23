@@ -56,24 +56,24 @@ export default function ShebasAceitePage() {
             <div className="mb-2 text-yellow-900/80">{product.description}</div>
             <div className="text-3xl font-extrabold text-yellow-700 mb-4">{product.price}</div>
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-yellow-700 font-semibold">Quantité :</span>
+              <span className="text-yellow-700 font-semibold">Cantidad:</span>
               <input ref={qtyRef} type="number" min={1} defaultValue={1} className="w-16 border border-yellow-300 rounded px-2 py-1 text-yellow-900 placeholder-yellow-300 font-bold bg-white" />
             </div>
-            <textarea className="w-full border border-yellow-300 rounded-lg p-2 mb-4 text-yellow-900 placeholder-yellow-300 font-semibold bg-white" placeholder="Votre commentaire..." rows={2} />
+            <textarea className="w-full border border-yellow-300 rounded-lg p-2 mb-4 text-yellow-900 placeholder-yellow-300 font-semibold bg-white" placeholder="Tu comentario..." rows={2} />
             <div className="flex gap-4 mb-4">
               <button
                 className="flex-1 bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-lg"
                 onClick={e => { e.preventDefault(); handleAddToCart(); }}
               >
-                Ajouter au panier
+                Añadir al carrito
               </button>
-              <button className="flex-1 bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 rounded-lg" onClick={() => router.push("/services/hair-solutions/panier")}>Payer</button>
+              <button className="flex-1 bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 rounded-lg" onClick={() => router.push("/services/hair-solutions/panier")}>Pagar</button>
             </div>
             {/* Erreur supprimée, la gestion réseau est côté contexte panier */}
             <ul className="text-sm text-gray-500 space-y-1 mt-2">
-              <li>✔️ Paiement sécurisé</li>
-              <li>✔️ Livraison rapide</li>
-              <li>✔️ Conseils personnalisés</li>
+              <li>✔️ Pago seguro</li>
+              <li>✔️ Entrega rápida</li>
+              <li>✔️ Consejos personalizados</li>
             </ul>
           </div>
         </div>

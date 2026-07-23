@@ -13,11 +13,11 @@ export default function HairSolutionsInscription() {
     e.preventDefault();
     setError("");
     if (!email || !password || !confirm) {
-      setError("Veuillez remplir tous les champs.");
+      setError("Por favor completa todos los campos.");
       return;
     }
     if (password !== confirm) {
-      setError("Les mots de passe ne correspondent pas.");
+      setError("Las contraseñas no coinciden.");
       return;
     }
     try {
@@ -28,10 +28,10 @@ export default function HairSolutionsInscription() {
       });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
-        setError(data.error || "Erreur lors de l'inscription.");
+        setError(data.error || "Error en el registro.");
         return;
       }
-      // Si le backend retourne un token, le stocker aussi dans le cookie
+      // Si el backend devuelve un token, guárdalo también en la cookie
       const data = await res.json().catch(() => ({}));
       if (data.token) {
         localStorage.setItem("shebas_token", data.token);
@@ -39,39 +39,39 @@ export default function HairSolutionsInscription() {
       }
       router.push("/services/hair-solutions");
     } catch {
-      setError("Erreur réseau. Réessayez.");
+      setError("Error de red. Intenta de nuevo.");
     }
   }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-yellow-50" style={{background: 'linear-gradient(120deg, #f7e1b5 0%, #fffbe6 100%)'}}>
       <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-6 text-yellow-800">Créer un compte</h2>
+        <h2 className="text-2xl font-bold mb-6 text-yellow-800">Crear cuenta</h2>
         {error && <div className="mb-4 text-red-600">{error}</div>}
         <input
           type="email"
-          placeholder="Email"
+          placeholder="Correo electrónico"
           value={email}
           onChange={e => setEmail(e.target.value)}
           className="w-full mb-4 px-4 py-2 border rounded"
         />
         <input
           type="password"
-          placeholder="Mot de passe"
+          placeholder="Contraseña"
           value={password}
           onChange={e => setPassword(e.target.value)}
           className="w-full mb-4 px-4 py-2 border rounded"
         />
         <input
           type="password"
-          placeholder="Confirmer le mot de passe"
+          placeholder="Confirmar contraseña"
           value={confirm}
           onChange={e => setConfirm(e.target.value)}
           className="w-full mb-6 px-4 py-2 border rounded"
         />
-        <button type="submit" className="w-full bg-yellow-600 text-white py-2 rounded hover:bg-yellow-700">S'inscrire</button>
+        <button type="submit" className="w-full bg-yellow-600 text-white py-2 rounded hover:bg-yellow-700">Registrarse</button>
         <div className="mt-4 text-center">
-          <a href="/services/hair-solutions/connexion" className="text-yellow-700 hover:underline">Déjà un compte ? Se connecter</a>
+          <a href="/services/hair-solutions/connexion" className="text-yellow-700 hover:underline">¿Ya tienes cuenta? Inicia sesión</a>
         </div>
       </form>
     </div>
