@@ -92,8 +92,8 @@ function parseDataUrl(dataUrl: string): { mimeType: string; buffer: Buffer } {
 function resolvePublicUploadsRoot(): string {
   const cwd = process.cwd();
   // Handles both running from /frontend and workspace root.
-  const frontendPublic = path.join(cwd, "public", "uploads");
-  const workspacePublic = path.join(cwd, "frontend", "public", "uploads");
+  const frontendPublic = path.join(/* turbopackIgnore: true */ cwd, "public", "uploads");
+  const workspacePublic = path.join(/* turbopackIgnore: true */ cwd, "frontend", "public", "uploads");
   return cwd.endsWith("frontend") ? frontendPublic : workspacePublic;
 }
 
@@ -108,13 +108,13 @@ export async function deleteManagedUploadIfExists(value: string | undefined): Pr
 
   const uploadsRoot = resolvePublicUploadsRoot();
   const relativePath = value.replace(/^\//, "");
-  const absolutePath = path.resolve(path.join(process.cwd(), "public"), relativePath);
-  const workspaceAbsolutePath = path.resolve(path.join(process.cwd(), "frontend", "public"), relativePath);
+  const absolutePath = path.resolve(/* turbopackIgnore: true */ path.join(process.cwd(), "public"), relativePath);
+  const workspaceAbsolutePath = path.resolve(/* turbopackIgnore: true */ path.join(process.cwd(), "frontend", "public"), relativePath);
 
   const candidates = [absolutePath, workspaceAbsolutePath];
   for (const candidate of candidates) {
-    const normalizedUploadsRoot = path.resolve(uploadsRoot);
-    const normalizedCandidate = path.resolve(candidate);
+    const normalizedUploadsRoot = path.resolve(/* turbopackIgnore: true */ uploadsRoot);
+    const normalizedCandidate = path.resolve(/* turbopackIgnore: true */ candidate);
 
     if (!normalizedCandidate.startsWith(normalizedUploadsRoot)) {
       continue;
@@ -175,11 +175,11 @@ export async function persistImageIfNeeded(
 
   const ext = getExtension(processed.mimeType);
   const uploadsRoot = resolvePublicUploadsRoot();
-  const targetDir = path.join(uploadsRoot, folder);
+  const targetDir = path.join(/* turbopackIgnore: true */ uploadsRoot, folder);
   await mkdir(targetDir, { recursive: true });
 
   const filename = `${Date.now()}-${randomUUID()}.${ext}`;
-  const filePath = path.join(targetDir, filename);
+  const filePath = path.join(/* turbopackIgnore: true */ targetDir, filename);
   await writeFile(filePath, processed.buffer);
 
   return `/uploads/${folder}/${filename}`;
