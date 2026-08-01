@@ -9,7 +9,7 @@ type Message = {
   fileType?: 'image' | 'video' | 'file'
 };
 
-type SpeechRecognitionConstructorType = new () => SpeechRecognition;
+type SpeechRecognitionConstructorType = new () => any;
 
 export default function ChatbotPage() {
   // Chat state
@@ -24,7 +24,7 @@ export default function ChatbotPage() {
   const [inputValue, setInputValue] = React.useState("");
   // Para el reconocimiento de voz
   const [isListening, setIsListening] = React.useState(false);
-  const recognitionRef = React.useRef<SpeechRecognition | null>(null);
+  const recognitionRef = React.useRef<any>(null);
   const transcriptRef = React.useRef<string>("");
 
   const [plusMenuOpen, setPlusMenuOpen] = React.useState(false);
