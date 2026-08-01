@@ -21,11 +21,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Asmyne Group — Soluciones digitales",
   description: "Asmyne Group ofrece asesoría migratoria, empresarial y servicios digitales adaptados para clientes internacionales.",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-  },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default async function RootLayout({
