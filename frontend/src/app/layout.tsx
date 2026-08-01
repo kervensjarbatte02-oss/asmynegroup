@@ -46,8 +46,6 @@ export default async function RootLayout({
     >
       <head />
       <body className="relative min-h-full flex flex-col overflow-x-hidden text-gray-800 bg-gray-50">
-        <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0 faq-water-ripples" />
-        <div aria-hidden="true" className="pointer-events-none fixed inset-x-0 top-0 h-[45vh] z-0 faq-water-sheen" />
         {/* ToastProvider must wrap CartProvider so CartContext can use toasts */}
         <ClientToastWrapper>
           <CartProviderBridge userCartPrefix={cartPrefix}>
