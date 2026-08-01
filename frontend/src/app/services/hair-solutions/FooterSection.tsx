@@ -5,7 +5,7 @@ import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 export default function FooterSection() {
   return (
     <footer className="w-full mt-0">
-      {/* Newsletter */}
+      {/* Suscribirse */}
       <div className="w-full py-10 flex flex-col items-center" style={{background: "linear-gradient(120deg, #2d2a1f 0%, #f7e1b5 100%)"}}>
         <div className="uppercase tracking-widest text-gray-700 mb-2">Boletín</div>
         <h2 className="text-3xl md:text-4xl font-extrabold text-black mb-6 text-center">OFERTAS EXCLUSIVAS Y NOVEDADES.</h2>

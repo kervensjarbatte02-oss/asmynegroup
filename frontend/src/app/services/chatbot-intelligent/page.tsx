@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { useState } from "react";
 import { FaPlus, FaRegCommentDots, FaSearch, FaRegFolder, FaRegCompass, FaUserCircle, FaMicrophone, FaRegEdit, FaGlobe, FaImage } from "react-icons/fa";
 
 type Message = {
@@ -10,28 +9,28 @@ type Message = {
   fileType?: 'image' | 'video' | 'file'
 };
 
-
+type SpeechRecognitionConstructorType = new () => SpeechRecognition;
 
 export default function ChatbotPage() {
   // Chat state
   const [messages, setMessages] = React.useState<Message[]>([]);
   // ...existing code...
-  // Pour les prompts contextuels
+  // Para los prompts contextuales
   const [prompt, setPrompt] = React.useState<string | null>(null);
   const [promptValue, setPromptValue] = React.useState("");
-  // Pour la galerie
+  // Para la galería
   const fileInputRef = React.useRef<HTMLInputElement | null>(null);
-  // Pour le texte et l'envoi
+  // Para el texto y el envío
   const [inputValue, setInputValue] = React.useState("");
-  // Pour la reconnaissance vocale
+  // Para el reconocimiento de voz
   const [isListening, setIsListening] = React.useState(false);
-  const recognitionRef = React.useRef<any>(null);
+  const recognitionRef = React.useRef<SpeechRecognition | null>(null);
   const transcriptRef = React.useRef<string>("");
 
   const [plusMenuOpen, setPlusMenuOpen] = React.useState(false);
   const plusBtnRef = React.useRef<HTMLButtonElement | null>(null);
 
-  // Fermer le menu si on clique ailleurs
+  // Cerrar el menú si se hace clic fuera
   React.useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -53,38 +52,38 @@ export default function ChatbotPage() {
   }, [plusMenuOpen]);
 
   return (
-    <div className="min-h-screen w-full bg-black text-white flex font-sans">
-      {/* Sidebar icônes */}
-      <aside className="w-20 bg-black border-r border-[#23272f] flex flex-col h-screen items-center justify-between py-4">
+    <div className="min-h-screen w-full bg-black text-white flex font-sans flex-col">
+      {/* Barra lateral de iconos */}
+      <aside className="hidden md:flex w-20 bg-black border-r border-[#23272f] flex-col h-screen items-center justify-between py-4">
         <div className="flex flex-col gap-4 items-center w-full">
           <div className="mb-4 w-full flex justify-center">
             <span className="text-xs font-bold tracking-wide text-[#ececf1] uppercase">Asmyne Group</span>
           </div>
-          {/* Plus sidebar : supprimé, déplacé au centre */}
-          <button className="w-10 h-10 flex items-center justify-center rounded hover:bg-[#23272f] text-white mx-auto" title="Conversations" onClick={() => alert('Conversations')}>
+          {/* Menú lateral adicional: eliminado, movido al centro */}
+          <button className="w-10 h-10 flex items-center justify-center rounded hover:bg-[#23272f] text-white mx-auto" title="Conversaciones" onClick={() => alert('Conversaciones')}>
             <FaRegCommentDots />
           </button>
-          <button className="w-10 h-10 flex items-center justify-center rounded hover:bg-[#23272f] text-white mx-auto" title="Search" onClick={() => alert('Recherche')}>
+          <button className="w-10 h-10 flex items-center justify-center rounded hover:bg-[#23272f] text-white mx-auto" title="Buscar" onClick={() => alert('Búsqueda')}>
             <FaSearch />
           </button>
-          <button className="w-10 h-10 flex items-center justify-center rounded hover:bg-[#23272f] text-white mx-auto" title="Projects" onClick={() => alert('Projets')}>
+          <button className="w-10 h-10 flex items-center justify-center rounded hover:bg-[#23272f] text-white mx-auto" title="Proyectos" onClick={() => alert('Proyectos')}>
             <FaRegFolder />
           </button>
-          <button className="w-10 h-10 flex items-center justify-center rounded hover:bg-[#23272f] text-white mx-auto" title="Explore" onClick={() => alert('Explorer')}>
+          <button className="w-10 h-10 flex items-center justify-center rounded hover:bg-[#23272f] text-white mx-auto" title="Explorar" onClick={() => alert('Explorar')}>
             <FaRegCompass />
           </button>
         </div>
         <div className="flex flex-col gap-4 items-center w-full">
-          <button className="w-10 h-10 flex items-center justify-center rounded-full bg-[#23272f] text-white mx-auto" title="Profile" onClick={() => alert('Profil')}>
+          <button className="w-10 h-10 flex items-center justify-center rounded-full bg-[#23272f] text-white mx-auto" title="Perfil" onClick={() => alert('Perfil')}>
             <span className="text-lg"><FaUserCircle /></span>
           </button>
         </div>
       </aside>
-      {/* Zone centrale moderne */}
-      <main className="flex-1 flex flex-col items-center justify-center min-h-screen bg-black">
-        <div className="w-full max-w-xl flex flex-col items-center justify-center mt-[-80px]">
-          <h1 className="text-2xl md:text-3xl font-semibold text-center mb-8 mt-8 text-[#ececf1]">Par quoi commençons-nous ?</h1>
-          {/* Zone de chat sans cadre ni fond */}
+      {/* Zona central moderna */}
+      <main className="flex-1 flex flex-col items-center justify-start min-h-screen bg-black px-4 py-6">
+        <div className="w-full max-w-xl flex flex-col items-center justify-center mt-4 md:mt-[-80px]">
+          <h1 className="text-2xl md:text-3xl font-semibold text-center mb-8 mt-8 text-[#ececf1]">¿Por dónde empezamos?</h1>
+          {/* Zona de chat sin marco ni fondo */}
           {messages.length > 0 && (
             <div className="w-full flex flex-col gap-2 mb-6 max-h-80 overflow-y-auto" style={{minHeight: 120}}>
               {messages.map((msg, idx) => (
@@ -121,7 +120,7 @@ export default function ChatbotPage() {
               <input
                 type="text"
                 className="flex-1 bg-transparent text-white border-none py-3 focus:outline-none focus:ring-0 placeholder-[#ececf1]/60"
-                placeholder="Poser une question"
+                placeholder="Haz una pregunta"
                 autoFocus
                 value={inputValue}
                 onChange={e => setInputValue(e.target.value)}
@@ -134,8 +133,8 @@ export default function ChatbotPage() {
                     setMessages(msgs => [...msgs, {role: 'user', text: inputValue}]);
                     const userMsg = inputValue;
                     setInputValue("");
-                    // Appel API
-                    setMessages(msgs => [...msgs, {role: 'ai', text: '⏳ Réponse en cours...'}]);
+                    // Llamada a la API
+                    setMessages(msgs => [...msgs, {role: 'ai', text: '⏳ Respuesta en curso...'}]);
                     try {
                       const res = await fetch("/api/chat", {
                         method: "POST",
@@ -149,19 +148,19 @@ export default function ChatbotPage() {
                           {role: 'ai', text: data.reply}
                         ]);
                       } else {
-                        // Fallback automatique en espagnol
+                        // Fallback automático en español
                         setMessages(msgs => [
                           ...msgs.slice(0, -1),
                           {role: 'ai', text: getAutoReply(userMsg)}
                         ]);
                       }
-                    } catch (e) {
+                    } catch (_e) {
                       setMessages(msgs => [
                         ...msgs.slice(0, -1),
                         {role: 'ai', text: getAutoReply(userMsg)}
                       ]);
                     }
-                  // Réponses automatiques fallback en espagnol
+                  // Respuestas automáticas fallback en español
                   function getAutoReply(msg: string) {
                     const txt = msg.toLowerCase();
                     if (txt.includes("horario") || txt.includes("horaire") || txt.includes("abierto")) {
@@ -195,17 +194,23 @@ export default function ChatbotPage() {
                   type="button"
                   className={`ml-2 text-[#ececf1] hover:text-[#e6b85c] text-xl ${isListening ? 'animate-pulse' : ''}`}
                   onClick={() => {
-                    if (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
-                      alert('Reconnaissance vocale non supportée');
+                    const SpeechRecognitionConstructor = ((window as unknown) as {
+                      SpeechRecognition?: SpeechRecognitionConstructorType;
+                      webkitSpeechRecognition?: SpeechRecognitionConstructorType;
+                    }).SpeechRecognition || ((window as unknown) as {
+                      SpeechRecognition?: SpeechRecognitionConstructorType;
+                      webkitSpeechRecognition?: SpeechRecognitionConstructorType;
+                    }).webkitSpeechRecognition;
+                    if (!SpeechRecognitionConstructor) {
+                      alert('El reconocimiento de voz no es compatible');
                       return;
                     }
                     if (!recognitionRef.current) {
-                      const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
-                      recognitionRef.current = new SpeechRecognition();
-                      recognitionRef.current.lang = 'fr-FR';
+                      recognitionRef.current = new SpeechRecognitionConstructor();
+                      recognitionRef.current.lang = 'es-ES';
                       recognitionRef.current.continuous = false;
                       recognitionRef.current.interimResults = false;
-                      recognitionRef.current.onresult = (event: any) => {
+                      recognitionRef.current.onresult = (event: SpeechRecognitionEvent) => {
                         const transcript = event.results[0][0].transcript;
                         transcriptRef.current = transcript;
                         setInputValue(prev => prev + (prev ? ' ' : '') + transcript);
@@ -213,13 +218,13 @@ export default function ChatbotPage() {
                       recognitionRef.current.onerror = () => setIsListening(false);
                       recognitionRef.current.onend = async () => {
                         setIsListening(false);
-                        // Si du texte a été reconnu, on l'envoie automatiquement
+                        // Si se reconoció texto, se envía automáticamente
                         const finalText = (inputValue + (inputValue && transcriptRef.current ? ' ' : '') + transcriptRef.current).trim();
                         transcriptRef.current = "";
                         if (finalText) {
                           setMessages(msgs => [...msgs, {role: 'user', text: finalText}]);
                           setInputValue("");
-                          setMessages(msgs => [...msgs, {role: 'ai', text: '⏳ Réponse en cours...'}]);
+                          setMessages(msgs => [...msgs, {role: 'ai', text: '⏳ Respuesta en curso...'}]);
                           try {
                             const res = await fetch("/api/chat", {
                               method: "POST",
@@ -229,22 +234,22 @@ export default function ChatbotPage() {
                             const data = await res.json();
                             setMessages(msgs => [
                               ...msgs.slice(0, -1),
-                              {role: 'ai', text: data.reply || data.error || 'Erreur AI'}
+                              {role: 'ai', text: data.reply || data.error || 'Error de IA'}
                             ]);
-                          } catch (e) {
+                          } catch (_e) {
                             setMessages(msgs => [
                               ...msgs.slice(0, -1),
-                              {role: 'ai', text: 'Erreur lors de la requête AI'}
+                              {role: 'ai', text: 'Error al enviar la solicitud a la IA'}
                             ]);
                           }
                         }
                       };
                     }
-                    if (isListening) return; // Empêche le double démarrage
+                    if (isListening) return; // Evita el doble arranque
                     setIsListening(true);
                     recognitionRef.current.start();
                   }}
-                  title="Parler"
+                  title="Hablar"
                 >
                   <FaMicrophone />
                 </button>
@@ -252,15 +257,15 @@ export default function ChatbotPage() {
               {/* Menu Plus central */}
               {plusMenuOpen && (
                 <div className="absolute left-0 top-12 z-30 min-w-[220px] bg-[#23272f] border border-[#343541] rounded-xl shadow-lg py-2 flex flex-col text-sm text-[#ececf1]">
-                  <button className="px-4 py-2 hover:bg-[#343541] text-left" onClick={() => { setPlusMenuOpen(false); fileInputRef.current?.click(); }}>Ajouter photos/fichiers</button>
+                  <button className="px-4 py-2 hover:bg-[#343541] text-left" onClick={() => { setPlusMenuOpen(false); fileInputRef.current?.click(); }}>Agregar fotos/archivos</button>
                   <input
                     type="file"
                     ref={fileInputRef}
                     accept="image/*,video/*"
                     multiple
                     style={{ display: "none" }}
-                    onChange={async e => {
-                      const files = e.target.files;
+                    onChange={async _e => {
+                      const files = _e.target.files;
                       if (files && files.length > 0) {
                         for (const file of Array.from(files)) {
                           let url = "";
@@ -281,34 +286,34 @@ export default function ChatbotPage() {
                               method: 'POST',
                               body: formData
                             });
-                          } catch (err) {
-                            setMessages(msgs => [...msgs, { role: 'ai', text: `Erreur lors de l'envoi du fichier : ${file.name}` }]);
+                          } catch {
+                            setMessages(msgs => [...msgs, { role: 'ai', text: `Error al enviar el archivo : ${file.name}` }]);
                           }
                         }
                       }
                     }}
                   />
-                  <button className="px-4 py-2 hover:bg-[#343541] text-left" onClick={() => { setPlusMenuOpen(false); fileInputRef.current?.click(); }}>Créer une image</button>
-                  <button className="px-4 py-2 hover:bg-[#343541] text-left" onClick={() => { setPlusMenuOpen(false); setPrompt('Réfléchis : Donnez une idée ou question'); }}>Réfléchis</button>
-                  <button className="px-4 py-2 hover:bg-[#343541] text-left" onClick={() => { setPlusMenuOpen(false); setPrompt('Recherche approfondie : Entrez votre requête'); }}>Recherche approfondie</button>
-                  <button className="px-4 py-2 hover:bg-[#343541] text-left" onClick={() => { setPlusMenuOpen(false); setPrompt('Recherche sur le Web : Entrez votre recherche'); }}>Recherche sur le Web</button>
-                  <button className="px-4 py-2 hover:bg-[#343541] text-left" onClick={() => { setPlusMenuOpen(false); setPrompt('Je parle de lieu : Entrez un lieu'); }}>Je parle de lieu</button>
+                  <button className="px-4 py-2 hover:bg-[#343541] text-left" onClick={() => { setPlusMenuOpen(false); fileInputRef.current?.click(); }}>Crear una imagen</button>
+                  <button className="px-4 py-2 hover:bg-[#343541] text-left" onClick={() => { setPlusMenuOpen(false); setPrompt('Piensa: da una idea o una pregunta'); }}>Piensa</button>
+                  <button className="px-4 py-2 hover:bg-[#343541] text-left" onClick={() => { setPlusMenuOpen(false); setPrompt('Búsqueda profunda: ingrese su consulta'); }}>Búsqueda profunda</button>
+                  <button className="px-4 py-2 hover:bg-[#343541] text-left" onClick={() => { setPlusMenuOpen(false); setPrompt('Búsqueda en la web: ingrese su búsqueda'); }}>Búsqueda en la web</button>
+                  <button className="px-4 py-2 hover:bg-[#343541] text-left" onClick={() => { setPlusMenuOpen(false); setPrompt('Hablo de un lugar: ingrese un lugar'); }}>Hablo de un lugar</button>
                   <div className="border-t border-[#343541] my-1" />
-                  <button className="px-4 py-2 hover:bg-[#343541] text-left" onClick={() => { setPlusMenuOpen(false); setPrompt('Projets : Décrivez votre projet'); }}>Projets</button>
+                  <button className="px-4 py-2 hover:bg-[#343541] text-left" onClick={() => { setPlusMenuOpen(false); setPrompt('Proyectos: describa su proyecto'); }}>Proyectos</button>
                   <div className="relative group">
-                    <button className="px-4 py-2 w-full text-left hover:bg-[#343541] flex items-center justify-between" onClick={() => { setPlusMenuOpen(false); setPrompt('Plus : Autre action'); }}>Plus <span className="ml-2">›</span></button>
+                    <button className="px-4 py-2 w-full text-left hover:bg-[#343541] flex items-center justify-between" onClick={() => { setPlusMenuOpen(false); setPrompt('Más: otra acción'); }}>Más <span className="ml-2">›</span></button>
                     <div className="absolute left-full top-0 z-40 min-w-[160px] bg-[#23272f] border border-[#343541] rounded-xl shadow-lg py-2 hidden group-hover:block">
-                      <button className="px-4 py-2 hover:bg-[#343541] text-left w-full" onClick={() => { setPlusMenuOpen(false); setPrompt('Canevas : Décrivez votre canevas'); }}>Canevas</button>
-                      <button className="px-4 py-2 hover:bg-[#343541] text-left w-full" onClick={() => { setPlusMenuOpen(false); setPrompt('OpenAI Platform : Entrez une commande'); }}>OpenAI Platform</button>
+                      <button className="px-4 py-2 hover:bg-[#343541] text-left w-full" onClick={() => { setPlusMenuOpen(false); setPrompt('Guion: describa su guion'); }}>Guion</button>
+                      <button className="px-4 py-2 hover:bg-[#343541] text-left w-full" onClick={() => { setPlusMenuOpen(false); setPrompt('Plataforma de OpenAI: ingrese un comando'); }}>Plataforma de OpenAI</button>
                     </div>
                   </div>
                 </div>
               )}
             </div>
             <div className="flex gap-2 w-full justify-center mt-2">
-              <button type="button" className="flex items-center gap-2 px-4 py-2 rounded-full border border-[#23272f] bg-[#23272f] text-[#ececf1] hover:bg-[#343541] text-sm font-medium" onClick={() => fileInputRef.current?.click()}><FaImage />Créer une image</button>
-              <button type="button" className="flex items-center gap-2 px-4 py-2 rounded-full border border-[#23272f] bg-[#23272f] text-[#ececf1] hover:bg-[#343541] text-sm font-medium" onClick={() => setPrompt('Rédiger ou modifier : Entrez votre texte') }><FaRegEdit />Rédiger ou modifier</button>
-              <button type="button" className="flex items-center gap-2 px-4 py-2 rounded-full border border-[#23272f] bg-[#23272f] text-[#ececf1] hover:bg-[#343541] text-sm font-medium" onClick={() => setPrompt('Faire une recherche : Entrez votre recherche') }><FaGlobe />Faire une recherche</button>
+              <button type="button" className="flex items-center gap-2 px-4 py-2 rounded-full border border-[#23272f] bg-[#23272f] text-[#ececf1] hover:bg-[#343541] text-sm font-medium" onClick={() => fileInputRef.current?.click()}><FaImage />Crear una imagen</button>
+              <button type="button" className="flex items-center gap-2 px-4 py-2 rounded-full border border-[#23272f] bg-[#23272f] text-[#ececf1] hover:bg-[#343541] text-sm font-medium" onClick={() => setPrompt('Redactar o modificar: ingrese su texto') }><FaRegEdit />Redactar o modificar</button>
+              <button type="button" className="flex items-center gap-2 px-4 py-2 rounded-full border border-[#23272f] bg-[#23272f] text-[#ececf1] hover:bg-[#343541] text-sm font-medium" onClick={() => setPrompt('Hacer una búsqueda: ingrese su búsqueda') }><FaGlobe />Hacer una búsqueda</button>
             </div>
           </form>
         </div>
@@ -332,14 +337,14 @@ export default function ChatbotPage() {
                 setPrompt(null);
                 setPromptValue("");
               }}
-            >Valider</button>
+            >Aceptar</button>
             <button
               className="px-4 py-2 rounded bg-[#343541] text-[#ececf1] hover:bg-[#e74c3c]"
               onClick={() => {
                 setPrompt(null);
                 setPromptValue("");
               }}
-            >Annuler</button>
+            >Cancelar</button>
           </div>
         </div>
       </div>

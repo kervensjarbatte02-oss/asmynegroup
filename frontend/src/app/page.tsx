@@ -1,29 +1,49 @@
+"use client";
+
 import HomeFooter from "./HomeFooter";
 import ServicesSection from "./ServicesSection";
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Home() {
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-secondary via-[#0a174e] to-black text-white font-sans overflow-x-hidden">
       {/* Header */}
-      <header className="flex items-center px-0 py-6 w-full">
-        {/* Colonne logo */}
-        <div className="flex items-center gap-2 flex-shrink-0 justify-start pl-0 ml-0 m-0 p-0">
-          <Image src="/asmyne-group-logo.png" alt="Logo Asmyne Group " width={72} height={72} />
-          <span className="text-2xl font-bold tracking-wide whitespace-nowrap">Asmyne <span className="text-accent">Group</span></span>
+      <header className="w-full px-4 py-6 md:px-0">
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex items-center gap-2 flex-shrink-0 justify-start">
+            <Image src="/asmyne-group-logo.png" alt="Logo Asmyne Group" width={56} height={56} />
+            <span className="text-xl md:text-2xl font-bold tracking-wide whitespace-nowrap">Asmyne <span className="text-accent">Group</span></span>
+          </div>
+          <div className="flex items-center gap-4">
+            <button
+              type="button"
+              className="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-full border border-white/20 bg-white/10 text-white hover:bg-white/15 transition"
+              onClick={() => setMobileNavOpen((value) => !value)}
+              aria-label="Ouvrir le menu mobile"
+            >
+              <span className="text-2xl">☰</span>
+            </button>
+            <nav className="hidden md:flex flex-1 justify-center gap-8 text-lg font-medium">
+              <Link href="/" className="hover:text-accent">Accueil</Link>
+              <Link href="/services/marketplace-global" className="hover:text-accent">Marketplace</Link>
+              <Link href="/blog" className="hover:text-accent">Blog</Link>
+              <Link href="/contact" className="hover:text-accent">Contact</Link>
+            </nav>
+          </div>
         </div>
-        {/* Colonne menu */}
-        <nav className="hidden md:flex flex-1 justify-center gap-8 text-lg font-medium">
-          <Link href="/" className="hover:text-accent">Accueil</Link>
-          {/* <Link href="/services" className="hover:text-accent">Services</Link> */}
-          <Link href="/marketplace" className="hover:text-accent">Marketplace</Link>
-          <Link href="/blog" className="hover:text-accent">Blog</Link>
-          <Link href="/contact" className="hover:text-accent">Contact</Link>
-        </nav>
-        {/* Spacer pour garder l'alignement du menu sans bouton */}
-        <div className="min-w-[160px] flex-shrink-0" aria-hidden="true" />
+        {mobileNavOpen && (
+          <div className="mt-4 flex flex-col gap-3 rounded-2xl border border-white/10 bg-[#07112d]/95 p-4 text-white md:hidden">
+            <Link href="/" className="block rounded-lg px-3 py-2 hover:bg-white/10" onClick={() => setMobileNavOpen(false)}>Accueil</Link>
+            <Link href="/services/marketplace-global" className="block rounded-lg px-3 py-2 hover:bg-white/10" onClick={() => setMobileNavOpen(false)}>Marketplace</Link>
+            <Link href="/blog" className="block rounded-lg px-3 py-2 hover:bg-white/10" onClick={() => setMobileNavOpen(false)}>Blog</Link>
+            <Link href="/contact" className="block rounded-lg px-3 py-2 hover:bg-white/10" onClick={() => setMobileNavOpen(false)}>Contact</Link>
+          </div>
+        )}
       </header>
 
       {/* Hero Section */}
@@ -40,8 +60,15 @@ export default function Home() {
             
           </p>
           <div className="flex gap-4 mb-6">
-            <Link href="/services/conseil-migratoire" className="px-7 py-3 rounded-full bg-primary text-white font-semibold text-lg shadow hover:bg-blue-700 transition inline-flex items-center justify-center">Comenzar Aqui </Link>
-            <button className="px-7 py-3 rounded-full border border-white/30 text-white font-semibold text-lg hover:bg-white/10 transition">Ver la demostración</button>
+            <Link href="/services/conseil-migratoire" className="px-7 py-3 rounded-full bg-primary text-white font-semibold text-lg shadow hover:bg-blue-700 transition inline-flex items-center justify-center">Comenzar Aqui</Link>
+            <a
+              href="https://embed.app.guidde.com/playbooks/rLrBGTRBbpjVwVjLuNqBWh?mode=videoOnly"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="px-7 py-3 rounded-full border border-white/30 text-white font-semibold text-lg hover:bg-white/10 transition inline-flex items-center justify-center"
+            >
+              Ver la demostración
+            </a>
           </div>
           <div className="flex gap-6 text-sm text-white/70">
             <span></span>
@@ -49,8 +76,8 @@ export default function Home() {
             <span></span>
           </div>
         </div>
-        <div className="flex-1 flex justify-end items-start p-0 m-0">
-          <Image src="/asmyne-group-logo.png" alt="Logo Asmyne Group " width={2000} height={2000} className="-mt-40 m-0 p-0" />
+        <div className="flex-1 flex justify-center items-start p-0 m-0">
+          <Image src="/asmyne-group-logo.png" alt="Logo Asmyne Group" width={1200} height={1200} className="w-full max-w-xs md:max-w-sm object-contain" />
         </div>
       </section>
 
@@ -117,7 +144,9 @@ export default function Home() {
           <p className="font-semibold text-white mb-6">
             
           </p>
-          <button className="px-8 py-3 rounded-full bg-primary text-white font-bold tracking-wide shadow hover:bg-blue-700 transition">READ MORE</button>
+          <Link href="/blog" className="inline-flex px-8 py-3 rounded-full bg-primary text-white font-bold tracking-wide shadow hover:bg-blue-700 transition justify-center">
+            READ MORE
+          </Link>
         </div>
       </section>
 

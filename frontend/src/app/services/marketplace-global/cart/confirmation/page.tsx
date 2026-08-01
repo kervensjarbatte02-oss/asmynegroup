@@ -34,7 +34,7 @@ function ConfirmationContent() {
 
   useEffect(() => {
     if (!orderId) {
-      setError("Aucun identifiant de commande trouvé.");
+      setError("No se encontró el identificador del pedido.");
       setLoading(false);
       return;
     }
@@ -69,8 +69,8 @@ function ConfirmationContent() {
                   <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
-              <h1 className="text-3xl font-bold text-gray-900">Commande confirmée !</h1>
-              <p className="mt-3 text-gray-600">Votre commande Marketplace Global a bien été enregistrée.</p>
+              <h1 className="text-3xl font-bold text-gray-900">¡Pedido confirmado!</h1>
+              <p className="mt-3 text-gray-600">Tu pedido de Marketplace Global se ha registrado correctamente.</p>
             </div>
 
             {loading ? (
@@ -81,25 +81,25 @@ function ConfirmationContent() {
               <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
                 <div className="rounded-3xl border border-gray-200 bg-gray-50 p-6">
                   <div className="mb-6">
-                    <p className="text-sm text-gray-500">N° de commande</p>
+                    <p className="text-sm text-gray-500">N.º de pedido</p>
                     <p className="font-mono text-lg font-semibold text-gray-900">{order.id}</p>
                   </div>
                   <div className="grid gap-3 text-sm text-gray-600">
                     <div className="flex justify-between">
-                      <span>Etat de la commande</span>
+                      <span>Estado del pedido</span>
                       <span className="font-semibold text-gray-900">{order.status}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Statut paiement</span>
+                      <span>Estado del pago</span>
                       <span className="font-semibold text-gray-900">{order.paymentStatus}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Email client</span>
+                      <span>Correo del cliente</span>
                       <span className="font-semibold text-gray-900">{order.buyerEmail}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Date</span>
-                      <span className="font-semibold text-gray-900">{order.createdAt ? new Date(order.createdAt).toLocaleDateString("fr-FR", { day: "2-digit", month: "long", year: "numeric" }) : "—"}</span>
+                      <span>Fecha</span>
+                      <span className="font-semibold text-gray-900">{order.createdAt ? new Date(order.createdAt).toLocaleDateString("es-ES", { day: "2-digit", month: "long", year: "numeric" }) : "—"}</span>
                     </div>
                     <div className="flex justify-between">
                       <span>Total</span>
@@ -109,7 +109,7 @@ function ConfirmationContent() {
                 </div>
 
                 <div className="rounded-3xl border border-gray-200 bg-white p-6">
-                  <h2 className="text-lg font-semibold text-gray-900 mb-4">Contenu de la commande</h2>
+                  <h2 className="text-lg font-semibold text-gray-900 mb-4">Contenido del pedido</h2>
                   <div className="space-y-4">
                     {order.lines.map((line) => (
                       <div key={`${line.productId}-${line.name}`} className="rounded-3xl border border-gray-100 bg-gray-50 p-4">
@@ -126,7 +126,7 @@ function ConfirmationContent() {
                 </div>
               </div>
             ) : (
-              <div className="rounded-3xl border border-gray-200 bg-gray-50 p-8 text-center text-gray-600">Commande introuvable.</div>
+              <div className="rounded-3xl border border-gray-200 bg-gray-50 p-8 text-center text-gray-600">Pedido no encontrado.</div>
             )}
 
             <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
@@ -134,14 +134,14 @@ function ConfirmationContent() {
                 href="/services/marketplace-global"
                 className="rounded-3xl bg-pink-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-pink-700"
               >
-                Retour au marketplace
+                Volver al marketplace
               </Link>
               {orderId ? (
                 <Link
                   href={`/services/marketplace-global/orders/${orderId}`}
                   className="rounded-3xl border border-gray-200 px-6 py-3 text-sm font-semibold text-gray-700 transition hover:bg-gray-100"
                 >
-                  Voir les détails de la commande
+                  Ver detalles del pedido
                 </Link>
               ) : null}
             </div>

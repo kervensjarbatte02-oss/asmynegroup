@@ -18,8 +18,8 @@ export default function HomeFooter() {
         </div>
         {/* Bloc newsletter */}
         <div className="flex-1 min-w-[220px]">
-          <div className="font-bold mb-3 text-lg">Newsletter</div>
-          <div className="text-white/80 mb-3">Inscrivez-vous pour recevoir nos dernières actualités.</div>
+          <div className="font-bold mb-3 text-lg">Suscribirse</div>
+          <div className="text-white/80 mb-3">Suscríbete para recibir nuestras últimas novedades.</div>
           <form className="flex items-center mb-2">
             <input type="email" placeholder="Votre email" className="rounded-full px-5 py-3 w-full text-black focus:outline-none" />
             <button type="submit" className="-ml-10 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-[#e6e85c] transition">

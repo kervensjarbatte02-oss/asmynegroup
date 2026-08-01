@@ -147,13 +147,13 @@ function MarketplacePaymentForm({ items, total, buyerEmail, onSuccess, setError 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <label className="block text-sm font-semibold text-gray-900 mb-2">Détails de paiement</label>
+        <label className="block text-sm font-semibold text-gray-900 mb-2">Detalles de pago</label>
         <div className="rounded-2xl border border-gray-200 bg-white p-4">
           <div className="mb-4">
-            <p className="text-sm text-gray-600">Nous utilisons Stripe pour traiter le paiement en toute sécurité.</p>
+            <p className="text-sm text-gray-600">Usamos Stripe para procesar el pago de forma segura.</p>
           </div>
           <div className="mb-4">
-            <label className="block text-xs font-medium text-gray-700 mb-2">Carte bancaire</label>
+            <label className="block text-xs font-medium text-gray-700 mb-2">Tarjeta de crédito</label>
             <div className="rounded-2xl border border-gray-200 bg-gray-50 p-4">
               <CardElement options={{ style: { base: { fontSize: "16px", color: "#111827", "::placeholder": { color: "#9ca3af" } } } }} />
             </div>
@@ -163,7 +163,7 @@ function MarketplacePaymentForm({ items, total, buyerEmail, onSuccess, setError 
             disabled={loading}
             className="w-full rounded-full bg-pink-600 px-4 py-3 text-sm font-semibold text-white hover:bg-pink-700 disabled:cursor-not-allowed disabled:opacity-60"
           >
-            {loading ? "Paiement en cours…" : `Payer ${total.toFixed(2)} $`}
+            {loading ? "Procesando pago…" : `Pagar ${total.toFixed(2)} $`}
           </button>
         </div>
       </div>
@@ -262,7 +262,7 @@ export default function MarketplaceCartPage() {
   const handleContinueToPayment = () => {
     setCheckoutError("");
     if (!buyerEmail || !firstName || !lastName || !phone || !address || !city || !postalCode) {
-      setCheckoutError("Tous les champs de livraison sont obligatoires.");
+      setCheckoutError("Todos los campos de envío son obligatorios.");
       return;
     }
     setStep(2);
@@ -280,8 +280,8 @@ export default function MarketplaceCartPage() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-8 flex flex-col gap-3">
             <p className="text-sm text-gray-500 uppercase tracking-[0.3em]">Checkout</p>
-            <h1 className="text-3xl font-bold text-gray-900">Finaliser votre commande</h1>
-            <p className="text-gray-600 max-w-2xl">Remplissez vos informations de livraison, choisissez votre mode de paiement et validez votre commande.</p>
+            <h1 className="text-3xl font-bold text-gray-900">Finaliza tu pedido</h1>
+            <p className="text-gray-600 max-w-2xl">Completa tus datos de envío, elige tu método de pago y confirma tu pedido.</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_0.9fr] gap-8">
@@ -289,30 +289,30 @@ export default function MarketplaceCartPage() {
               <div className="rounded-3xl bg-white border border-gray-200 p-8 shadow-sm">
                 <div className="flex items-start justify-between gap-4 mb-6">
                   <div>
-                    <span className="text-sm font-semibold uppercase tracking-[0.3em] text-pink-700">Étape 1</span>
-                    <h2 className="mt-2 text-2xl font-bold text-gray-900">Adresse de livraison</h2>
+                    <span className="text-sm font-semibold uppercase tracking-[0.3em] text-pink-700">Paso 1</span>
+                    <h2 className="mt-2 text-2xl font-bold text-gray-900">Dirección de envío</h2>
                   </div>
-                  <span className="rounded-full bg-pink-50 px-4 py-2 text-sm font-semibold text-pink-700">{marketplaceCart.length} article{marketplaceCart.length > 1 ? "s" : ""}</span>
+                  <span className="rounded-full bg-pink-50 px-4 py-2 text-sm font-semibold text-pink-700">{marketplaceCart.length} artículo{marketplaceCart.length > 1 ? "s" : ""}</span>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Prénom</label>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">Nombre</label>
                     <input
                       type="text"
                       value={firstName}
                       onChange={(event) => setFirstName(event.target.value)}
-                      placeholder="Jean"
+                      placeholder="Juan"
                       className="w-full rounded-3xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-pink-500 focus:ring-2 focus:ring-pink-100"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Nom</label>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">Apellido</label>
                     <input
                       type="text"
                       value={lastName}
                       onChange={(event) => setLastName(event.target.value)}
-                      placeholder="Dupont"
+                      placeholder="Pérez"
                       className="w-full rounded-3xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-pink-500 focus:ring-2 focus:ring-pink-100"
                     />
                   </div>
@@ -320,22 +320,22 @@ export default function MarketplaceCartPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">Correo electrónico</label>
                     <input
                       type="email"
                       value={buyerEmail}
                       onChange={(event) => setBuyerEmail(event.target.value)}
-                      placeholder="email@exemple.com"
+                      placeholder="email@ejemplo.com"
                       className="w-full rounded-3xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-pink-500 focus:ring-2 focus:ring-pink-100"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Téléphone</label>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">Teléfono</label>
                     <input
                       type="tel"
                       value={phone}
                       onChange={(event) => setPhone(event.target.value)}
-                      placeholder="+33 6 12 34 56 78"
+                      placeholder="+1 809 123 4567"
                       className="w-full rounded-3xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-pink-500 focus:ring-2 focus:ring-pink-100"
                     />
                   </div>
@@ -343,51 +343,51 @@ export default function MarketplaceCartPage() {
 
                 <div className="grid grid-cols-1 gap-4 mt-4">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Adresse</label>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">Dirección</label>
                     <input
                       type="text"
                       value={address}
                       onChange={(event) => setAddress(event.target.value)}
-                      placeholder="123 rue de l'Exemple"
+                      placeholder="123 Calle Ejemplo"
                       className="w-full rounded-3xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-pink-500 focus:ring-2 focus:ring-pink-100"
                     />
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">Ville</label>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">Ciudad</label>
                       <input
                         type="text"
                         value={city}
                         onChange={(event) => setCity(event.target.value)}
-                        placeholder="Paris"
+                        placeholder="Santo Domingo"
                         className="w-full rounded-3xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-pink-500 focus:ring-2 focus:ring-pink-100"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">Code postal</label>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">Código postal</label>
                       <input
                         type="text"
                         value={postalCode}
                         onChange={(event) => setPostalCode(event.target.value)}
-                        placeholder="75001"
-                        className="w-full rounded-3xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-pink-500 focus:ring-2 focus:ring-pink-100"
+                        placeholder="01000"
+                        className="w-full rounded-3xl border border-gray-200 bg-gray-50 px-4 py-3 texto-sm text-gray-900 outline-none transition focus:border-pink-500 focus:ring-2 focus:ring-pink-100"
                       />
                     </div>
                   </div>
                 </div>
 
                 <div className="mt-4">
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Pays</label>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">País</label>
                   <select
                     value={country}
                     onChange={(event) => setCountry(event.target.value)}
                     className="w-full rounded-3xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-pink-500 focus:ring-2 focus:ring-pink-100"
                   >
-                    <option value="FR">France</option>
-                    <option value="CA">Canada</option>
-                    <option value="US">États-Unis</option>
-                    <option value="GB">Royaume-Uni</option>
-                    <option value="DR">République Dominicaine</option>
+                    <option value="FR">Francia</option>
+                    <option value="CA">Canadá</option>
+                    <option value="US">Estados Unidos</option>
+                    <option value="GB">Reino Unido</option>
+                    <option value="DR">República Dominicana</option>
                   </select>
                 </div>
 
@@ -396,15 +396,15 @@ export default function MarketplaceCartPage() {
                   onClick={handleContinueToPayment}
                   className="mt-8 w-full rounded-3xl bg-pink-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-pink-700"
                 >
-                  Continuer vers le paiement
+                  Continuar al pago
                 </button>
               </div>
 
               <div className="rounded-3xl bg-white border border-gray-200 p-8 shadow-sm">
                 <div className="flex items-center justify-between mb-6">
                   <div>
-                    <span className="text-sm font-semibold uppercase tracking-[0.3em] text-pink-700">Étape 2</span>
-                    <h2 className="mt-2 text-2xl font-bold text-gray-900">Méthode de paiement</h2>
+                    <span className="text-sm font-semibold uppercase tracking-[0.3em] text-pink-700">Paso 2</span>
+                    <h2 className="mt-2 text-2xl font-bold text-gray-900">Método de pago</h2>
                   </div>
                 </div>
 
@@ -418,7 +418,7 @@ export default function MarketplaceCartPage() {
                       onChange={() => setPaymentMethod("card")}
                       className="mr-3 accent-pink-600"
                     />
-                    <span className="font-semibold">Carte bancaire</span>
+                    <span className="font-semibold">Tarjeta de crédito</span>
                   </label>
                   <label className={`cursor-pointer rounded-3xl border p-4 transition ${paymentMethod === "paypal" ? "border-pink-500 bg-pink-50 text-gray-900" : "border-gray-200 bg-white text-gray-900"}`}>
                     <input
@@ -429,7 +429,7 @@ export default function MarketplaceCartPage() {
                       onChange={() => setPaymentMethod("paypal")}
                       className="mr-3 accent-pink-600"
                     />
-                    <span className="font-semibold">PayPal (bientôt disponible)</span>
+                    <span className="font-semibold">PayPal (próximamente disponible)</span>
                   </label>
                 </div>
 
@@ -445,12 +445,12 @@ export default function MarketplaceCartPage() {
                       />
                     ) : (
                       <div className="rounded-3xl border border-yellow-200 bg-yellow-50 p-6 text-sm text-yellow-900">
-                        PayPal sera disponible prochainement. Sélectionnez la carte bancaire pour finaliser votre paiement maintenant.
+                        PayPal estará disponible próximamente. Selecciona tarjeta bancaria para finalizar tu pago ahora.
                       </div>
                     )
                   ) : (
                     <div className="rounded-3xl border border-gray-200 bg-gray-50 p-5 text-sm text-gray-600">
-                      Remplissez d'abord l'adresse de livraison et cliquez sur Continuer vers le paiement.
+                      Primero completa la dirección de envío y haz clic en Continuar al pago.
                     </div>
                   )}
                 </div>
@@ -463,7 +463,7 @@ export default function MarketplaceCartPage() {
 
             <aside className="space-y-6">
               <div className="rounded-3xl bg-white border border-gray-200 p-6 shadow-sm sticky top-6">
-                <h2 className="text-xl font-semibold text-gray-900 mb-4">Résumé de commande</h2>
+                <h2 className="text-xl font-semibold text-gray-900 mb-4">Resumen de pedido</h2>
                 <div className="space-y-4">
                   {marketplaceCart.map((item) => (
                     <div
@@ -478,7 +478,7 @@ export default function MarketplaceCartPage() {
                         </div>
                         <div className="min-w-0">
                           <p className="text-sm font-semibold text-gray-900 truncate">{item.name}</p>
-                          <p className="text-xs text-gray-500">Qté {item.quantity}</p>
+                          <p className="text-xs text-gray-500">Cant. {item.quantity}</p>
                         </div>
                       </div>
                       <div className="flex items-center gap-2">
@@ -488,7 +488,7 @@ export default function MarketplaceCartPage() {
                             onClick={() => updateQuantity(item.id, Math.max(1, item.quantity - 1), item.source, item.variant)}
                             disabled={item.quantity <= 1}
                             className="h-8 w-8 rounded-l-full text-sm font-bold text-gray-600 transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:text-gray-300"
-                            aria-label={`Diminuer la quantité de ${item.name}`}
+                            aria-label={`Disminuir la cantidad de ${item.name}`}
                           >
                             −
                           </button>
@@ -497,7 +497,7 @@ export default function MarketplaceCartPage() {
                             type="button"
                             onClick={() => updateQuantity(item.id, item.quantity + 1, item.source, item.variant)}
                             className="h-8 w-8 rounded-r-full text-sm font-bold text-gray-600 transition hover:bg-gray-100"
-                            aria-label={`Augmenter la quantité de ${item.name}`}
+                            aria-label={`Aumentar la cantidad de ${item.name}`}
                           >
                             +
                           </button>
@@ -509,7 +509,7 @@ export default function MarketplaceCartPage() {
                           className="inline-flex items-center gap-1 rounded-full border border-red-200 bg-red-50 px-3 py-1 text-xs font-semibold text-red-700 hover:bg-red-100"
                         >
                           <FaTimes />
-                          Supprimer
+                          Eliminar
                         </button>
                       </div>
                     </div>
@@ -517,10 +517,10 @@ export default function MarketplaceCartPage() {
                 </div>
 
                 <div className="mt-6 border-t border-gray-200 pt-5 space-y-3 text-sm text-gray-600">
-                  <div className="flex justify-between"><span>Sous-total</span><span>{subtotal.toFixed(2)} $</span></div>
-                  <div className="flex justify-between"><span>Remise</span><span>-{discount.toFixed(2)} $</span></div>
-                  <div className="flex justify-between"><span>Livraison</span><span>{delivery.toFixed(2)} $</span></div>
-                  <div className="flex justify-between"><span>Taxe</span><span>{tax.toFixed(2)} $</span></div>
+                  <div className="flex justify-between"><span>Subtotal</span><span>{subtotal.toFixed(2)} $</span></div>
+                  <div className="flex justify-between"><span>Descuento</span><span>-{discount.toFixed(2)} $</span></div>
+                  <div className="flex justify-between"><span>Envío</span><span>{delivery.toFixed(2)} $</span></div>
+                  <div className="flex justify-between"><span>Impuesto</span><span>{tax.toFixed(2)} $</span></div>
                 </div>
 
                 <div className="mt-4 rounded-3xl bg-gray-50 p-4 text-sm font-semibold text-gray-900">
@@ -530,16 +530,16 @@ export default function MarketplaceCartPage() {
               </div>
 
               <div className="rounded-3xl bg-white border border-gray-200 p-6 shadow-sm">
-                <h3 className="text-base font-semibold text-gray-900 mb-3">Livraison et support</h3>
+                <h3 className="text-base font-semibold text-gray-900 mb-3">Envío y soporte</h3>
                 <ul className="space-y-3 text-sm text-gray-600">
                   <li className="flex items-start gap-3">
-                    <span className="mt-1 h-2.5 w-2.5 rounded-full bg-pink-600" /> Livraison standard 5-10 jours ouvrés.
+                    <span className="mt-1 h-2.5 w-2.5 rounded-full bg-pink-600" /> Envío estándar 5-10 días hábiles.
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="mt-1 h-2.5 w-2.5 rounded-full bg-pink-600" /> Paiement sécurisé via Stripe.
+                    <span className="mt-1 h-2.5 w-2.5 rounded-full bg-pink-600" /> Pago seguro con Stripe.
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="mt-1 h-2.5 w-2.5 rounded-full bg-pink-600" /> Assistance client disponible 7j/7.
+                    <span className="mt-1 h-2.5 w-2.5 rounded-full bg-pink-600" /> Atención al cliente disponible 7/7.
                   </li>
                 </ul>
               </div>
